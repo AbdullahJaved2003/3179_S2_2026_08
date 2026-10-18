@@ -1,0 +1,72 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Two small charts sharing one timeline: revenue earned by Australian game-development studios (bars) and number of employees (line), FY2016–FY2025, from IGEA surveys. No survey was run for FY2018. FY2025 revenue used a new method and is drawn hatched-light.",
+  "data": {"url": "data/au_industry.csv"},
+  "transform": [
+    {"calculate": "toNumber(datum.revenue_m)", "as": "revenue"},
+    {"calculate": "toNumber(datum.employees)", "as": "staff"},
+    {"calculate": "datum.fy === 'FY2025'", "as": "newMethod"}
+  ],
+  "hconcat": [
+    {
+      "title": {"text": "Revenue (A$ millions)", "fontSize": 12.5},
+      "width": 300,
+      "height": 220,
+      "encoding": {
+        "x": {"field": "fy", "type": "ordinal", "title": null, "axis": {"labelAngle": 0, "labelExpr": "replace(datum.value, 'FY20', \"'\")", "ticks": false, "domain": false}}
+      },
+      "layer": [
+        {
+          "mark": {"type": "bar", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3, "width": 22},
+          "encoding": {
+            "y": {"field": "revenue", "type": "quantitative", "title": null, "axis": {"format": "$,.0f", "tickCount": 4, "gridColor": "#EDE6DA", "domain": false, "ticks": false}},
+            "fill": {"condition": {"test": "datum.newMethod", "value": "#B5DEC8"}, "value": "#2D8A68"},
+            "stroke": {"condition": {"test": "datum.newMethod", "value": "#2D8A68"}, "value": null},
+            "strokeDash": {"condition": {"test": "datum.newMethod", "value": [3, 2]}, "value": [1, 0]},
+            "tooltip": [
+              {"field": "fy", "title": "Financial year"},
+              {"field": "revenue", "title": "Revenue (A$ millions)", "format": ",.1f"},
+              {"field": "studios_surveyed", "title": "Studios surveyed"},
+              {"field": "note", "title": "Note"}
+            ]
+          }
+        },
+        {
+          "mark": {"type": "text", "dy": -7, "fontSize": 10, "color": "#4A4453"},
+          "encoding": {"y": {"field": "revenue", "type": "quantitative"}, "text": {"field": "revenue", "type": "quantitative", "format": "$,.0f"}}
+        },
+        {
+          "data": {"values": [{"fy": "FY2025", "y": 520, "t": ["New method:", "adds sales data", "from Sensor Tower"]}]},
+          "mark": {"type": "text", "align": "right", "dx": -16, "fontSize": 10, "lineHeight": 12, "fontStyle": "italic", "color": "#6B6475"},
+          "encoding": {"x": {"field": "fy", "type": "ordinal"}, "y": {"field": "y", "type": "quantitative"}, "text": {"field": "t"}}
+        }
+      ]
+    },
+    {
+      "title": {"text": "Full-time employees", "fontSize": 12.5},
+      "width": 300,
+      "height": 220,
+      "encoding": {
+        "x": {"field": "fy", "type": "ordinal", "title": null, "axis": {"labelAngle": 0, "labelExpr": "replace(datum.value, 'FY20', \"'\")", "ticks": false, "domain": false}}
+      },
+      "layer": [
+        {
+          "mark": {"type": "line", "color": "#0E513D", "strokeWidth": 2.5, "point": {"filled": true, "size": 50, "color": "#0E513D"}},
+          "encoding": {
+            "y": {"field": "staff", "type": "quantitative", "title": null, "scale": {"domain": [0, 3000]}, "axis": {"format": ",.0f", "tickCount": 4, "gridColor": "#EDE6DA", "domain": false, "ticks": false}},
+            "tooltip": [
+              {"field": "fy", "title": "Financial year"},
+              {"field": "staff", "title": "Employees", "format": ","},
+              {"field": "studios_surveyed", "title": "Studios surveyed"}
+            ]
+          }
+        },
+        {
+          "transform": [{"filter": "datum.fy === 'FY2016' || datum.fy === 'FY2025' || datum.fy === 'FY2022'"}],
+          "mark": {"type": "text", "dy": -12, "fontSize": 10.5, "fontWeight": 600, "color": "#0E513D"},
+          "encoding": {"y": {"field": "staff", "type": "quantitative"}, "text": {"field": "staff", "type": "quantitative", "format": ","}}
+        }
+      ]
+    }
+  ]
+}

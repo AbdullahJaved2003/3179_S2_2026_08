@@ -1,0 +1,64 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Choropleth of Australian states and territories: share of game-development studios or employees (IGEA survey, FY2025). Australian Albers projection (conic equal-area, standard parallels 18°S and 36°S).",
+  "width": 520,
+  "height": 440,
+  "projection": {"type": "conicEqualArea", "parallels": [-18, -36], "rotate": [-132, 0], "center": [0, -27.5], "scale": 720, "translate": [260, 215]},
+  "params": [
+    {
+      "name": "measure",
+      "value": "employees_2025",
+      "bind": {"input": "radio", "options": ["employees_2025", "studios_2025"], "labels": ["Share of employees", "Share of studios"], "name": "Show: "}
+    }
+  ],
+  "layer": [
+    {
+      "data": {"url": "data/geo/aus_states.geojson", "format": {"type": "json", "property": "features"}},
+      "transform": [
+        {"lookup": "properties.abbrev", "from": {"data": {"url": "data/au_states.csv"}, "key": "abbrev", "fields": ["employees_2025", "studios_2025", "employees_2024", "studios_2024", "capital"]}},
+        {"calculate": "toNumber(datum[measure]) / 100", "as": "value"},
+        {"calculate": "toNumber(datum.employees_2025) / 100", "as": "employees"},
+        {"calculate": "toNumber(datum.studios_2025) / 100", "as": "studios"}
+      ],
+      "mark": {"type": "geoshape", "stroke": "#FFFFFF", "strokeWidth": 1.2},
+      "encoding": {
+        "color": {
+          "field": "value",
+          "type": "quantitative",
+          "title": "Share of national total",
+          "scale": {"domain": [0, 0.3], "range": ["#EEF6F1", "#B5DEC8", "#6DBB98", "#2D8A68", "#0E513D"]},
+          "legend": {"format": ".0%", "orient": "bottom-left", "direction": "horizontal", "gradientLength": 180, "values": [0, 0.1, 0.2, 0.3]}
+        },
+        "tooltip": [
+          {"field": "properties.name", "title": "State / territory"},
+          {"field": "employees", "type": "quantitative", "title": "Share of employees (FY2025)", "format": ".0%"},
+          {"field": "studios", "type": "quantitative", "title": "Share of studios (FY2025)", "format": ".0%"}
+        ]
+      }
+    },
+    {
+      "data": {"values": [{"lat": -35.28, "lon": 149.13, "lat2": -35.75, "lon2": 152.4}]},
+      "mark": {"type": "rule", "color": "#6B6475", "strokeWidth": 1},
+      "encoding": {
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude2": {"field": "lat2"},
+        "longitude2": {"field": "lon2"}
+      }
+    },
+    {
+      "data": {"url": "data/au_states.csv"},
+      "transform": [
+        {"calculate": "toNumber(datum[measure])", "as": "value"},
+        {"calculate": "datum.abbrev === 'VIC' ? 'VIC ' + datum.value + '%' : [datum.abbrev, datum.value + '%']", "as": "label"}
+      ],
+      "mark": {"type": "text", "fontSize": 13, "fontWeight": 700, "lineHeight": 15, "align": "center", "baseline": "middle"},
+      "encoding": {
+        "longitude": {"field": "label_lon", "type": "quantitative"},
+        "latitude": {"field": "label_lat", "type": "quantitative"},
+        "text": {"field": "label"},
+        "color": {"condition": {"test": "datum.value >= 20 && datum.abbrev !== 'ACT' && datum.abbrev !== 'TAS'", "value": "#FFFFFF"}, "value": "#2B2433"}
+      }
+    }
+  ]
+}

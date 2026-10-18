@@ -1,0 +1,48 @@
+{
+  "font": "IBM Plex Sans",
+  "background": null,
+  "padding": 4,
+  "view": {
+    "stroke": null
+  },
+  "axis": {
+    "labelFont": "IBM Plex Sans",
+    "titleFont": "IBM Plex Sans",
+    "labelColor": "#4A4453",
+    "titleColor": "#4A4453",
+    "labelFontSize": 12,
+    "titleFontSize": 12.5,
+    "titleFontWeight": 500,
+    "gridColor": "#E6DFD3",
+    "domainColor": "#BDB3A3",
+    "tickColor": "#BDB3A3"
+  },
+  "legend": {
+    "labelFont": "IBM Plex Sans",
+    "titleFont": "IBM Plex Sans",
+    "labelFontSize": 12,
+    "titleFontSize": 12,
+    "titleFontWeight": 600,
+    "labelColor": "#4A4453",
+    "titleColor": "#2B2433"
+  },
+  "header": {
+    "labelFont": "IBM Plex Sans",
+    "titleFont": "IBM Plex Sans",
+    "labelFontSize": 12,
+    "labelFontWeight": 600
+  },
+  "title": {
+    "font": "IBM Plex Sans",
+    "anchor": "start",
+    "fontSize": 14,
+    "fontWeight": 600,
+    "color": "#2B2433",
+    "subtitleColor": "#6B6475",
+    "subtitleFontSize": 12
+  },
+  "text": {
+    "font": "IBM Plex Sans",
+    "color": "#2B2433"
+  }
+}

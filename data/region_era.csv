@@ -1,0 +1,25 @@
+EraOrder,EraYears,EraName,region,sales,share
+1,1980–85,Early consoles,North America,145.7,0.7394
+1,1980–85,Early consoles,Europe,11.92,0.0605
+1,1980–85,Early consoles,Japan,36.91,0.1873
+1,1980–85,Early consoles,Rest of world,2.51,0.01274
+2,1986–94,8 & 16-bit,North America,205.3,0.4441
+2,1986–94,8 & 16-bit,Europe,62.1,0.1343
+2,1986–94,8 & 16-bit,Japan,183.4,0.3967
+2,1986–94,8 & 16-bit,Rest of world,11.5,0.02487
+3,1995–2000,3D revolution,North America,555.2,0.4637
+3,1995–2000,3D revolution,Europe,292.8,0.2445
+3,1995–2000,3D revolution,Japan,297.2,0.2482
+3,1995–2000,3D revolution,Rest of world,52.16,0.04356
+4,2001–05,PS2 era,North America,1049,0.5345
+4,2001–05,PS2 era,Europe,537.7,0.274
+4,2001–05,PS2 era,Japan,211.8,0.1079
+4,2001–05,PS2 era,Rest of world,163.9,0.08353
+5,2006–12,Motion & HD,North America,1966,0.4969
+5,2006–12,Motion & HD,Europe,1129,0.2853
+5,2006–12,Motion & HD,Japan,420.4,0.1063
+5,2006–12,Motion & HD,Rest of world,441.3,0.1115
+6,2013–15,Modern,North America,389.6,0.4019
+6,2013–15,Modern,Europe,349.2,0.3602
+6,2013–15,Modern,Japan,120.8,0.1246
+6,2013–15,Modern,Rest of world,109.8,0.1133

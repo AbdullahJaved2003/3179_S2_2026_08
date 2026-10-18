@@ -1,0 +1,323 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Flow map seen from above the North Pole (azimuthal equal-area projection). Each band runs from where a group of publishers is headquartered to a market where their games were sold; it is widest at the start and tapers towards the destination. Band width = copies sold. Rings = share of games sold at home.",
+  "width": 560,
+  "height": 520,
+  "projection": {
+    "type": "azimuthalEqualArea",
+    "rotate": [
+      -20,
+      -90,
+      0
+    ],
+    "clipAngle": 72,
+    "scale": 225,
+    "translate": [
+      280,
+      260
+    ]
+  },
+  "params": [
+    {
+      "name": "origin",
+      "value": "All",
+      "bind": {
+        "input": "radio",
+        "options": [
+          "All",
+          "Japan",
+          "North America",
+          "Europe"
+        ],
+        "labels": [
+          "All",
+          "Japanese publishers",
+          "North American publishers",
+          "European publishers"
+        ],
+        "name": "Show games made by: "
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "size": "independent"
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "sphere": true
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#EAF1F2",
+        "stroke": "#D5DEDF"
+      }
+    },
+    {
+      "data": {
+        "graticule": {
+          "step": [
+            30,
+            15
+          ]
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#D5DEDF",
+        "strokeWidth": 0.6,
+        "filled": false
+      }
+    },
+    {
+      "data": {
+        "url": "data/geo/world-110m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#E7DFD1",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.6
+      }
+    },
+    {
+      "data": {
+        "url": "data/flow_paths.csv"
+      },
+      "transform": [
+        {
+          "filter": "origin === 'All' || datum.origin === origin"
+        },
+        {
+          "calculate": "toNumber(datum.step)",
+          "as": "step"
+        },
+        {
+          "calculate": "toNumber(datum.width)",
+          "as": "width"
+        }
+      ],
+      "mark": {
+        "type": "trail",
+        "opacity": 0.82
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "detail": {
+          "field": "dest"
+        },
+        "order": {
+          "field": "step",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "width",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1300
+            ],
+            "range": [
+              0,
+              30
+            ]
+          },
+          "legend": null
+        },
+        "color": {
+          "field": "origin",
+          "type": "nominal",
+          "title": "Publisher's home",
+          "scale": {
+            "domain": [
+              "North America",
+              "Europe",
+              "Japan"
+            ],
+            "range": [
+              "#1B8A8F",
+              "#E3A21A",
+              "#D64545"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "origin",
+            "title": "Publishers based in"
+          },
+          {
+            "field": "dest",
+            "title": "Sold in"
+          },
+          {
+            "field": "sales",
+            "type": "quantitative",
+            "title": "Copies (millions)",
+            "format": ",.0f"
+          },
+          {
+            "field": "share",
+            "type": "quantitative",
+            "title": "Share of their sales",
+            "format": ".0%"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/flow_home.csv"
+      },
+      "transform": [
+        {
+          "calculate": "origin === 'All' || datum.origin === origin ? 1 : 0.15",
+          "as": "fade"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "strokeWidth": 3.5,
+        "fill": "#FFFFFF",
+        "fillOpacity": 0.85
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "share",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              0.6
+            ],
+            "range": [
+              0,
+              2200
+            ]
+          },
+          "legend": null
+        },
+        "stroke": {
+          "field": "origin",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "North America",
+              "Europe",
+              "Japan"
+            ],
+            "range": [
+              "#1B8A8F",
+              "#E3A21A",
+              "#D64545"
+            ]
+          },
+          "legend": null
+        },
+        "opacity": {
+          "field": "fade",
+          "type": "quantitative",
+          "scale": null
+        },
+        "tooltip": [
+          {
+            "field": "origin",
+            "title": "Publishers based in"
+          },
+          {
+            "field": "share",
+            "type": "quantitative",
+            "title": "Sold at home",
+            "format": ".0%"
+          },
+          {
+            "field": "other_share",
+            "type": "quantitative",
+            "title": "Sold in rest of world (incl. Australia)",
+            "format": ".0%"
+          },
+          {
+            "field": "total",
+            "type": "quantitative",
+            "title": "All copies (millions)",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/flow_home.csv"
+      },
+      "transform": [
+        {
+          "calculate": "origin === 'All' || datum.origin === origin ? 1 : 0.2",
+          "as": "fade"
+        },
+        {
+          "calculate": "[datum.origin, format(datum.share, '.0%') + ' sold at home']",
+          "as": "label"
+        },
+        {
+          "calculate": "datum.origin === 'Japan' ? 29.5 : datum.origin === 'Europe' ? 41.5 : 50.5",
+          "as": "labelLat"
+        },
+        {
+          "calculate": "datum.origin === 'Japan' ? 150 : datum.origin === 'Europe' ? 6 : -128",
+          "as": "labelLon"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11.5,
+        "fontWeight": 700,
+        "lineHeight": 14,
+        "baseline": "middle"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "labelLon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "labelLat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        },
+        "color": {
+          "value": "#2B2433"
+        },
+        "opacity": {
+          "field": "fade",
+          "type": "quantitative",
+          "scale": null
+        }
+      }
+    }
+  ]
+}

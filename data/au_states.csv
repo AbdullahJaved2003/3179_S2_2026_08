@@ -1,0 +1,9 @@
+abbrev,name,capital,lat,lon,studios_2025,employees_2025,studios_2024,employees_2024,label_lat,label_lon
+VIC,Victoria,Melbourne,-37.81,145,27,30,28,36,-37.05,144.3
+QLD,Queensland,Brisbane,-27.47,153,17,27,25,27,-22.5,144.5
+NSW,New South Wales,Sydney,-33.87,151.2,17,23,15,18,-32.2,146.5
+SA,South Australia,Adelaide,-34.93,138.6,8,11,6,11,-29.5,135.5
+WA,Western Australia,Perth,-31.95,115.9,14,8,15,6,-25.5,121.5
+ACT,Australian Capital Territory,Canberra,-35.28,149.1,2,1,3,1,-36.2,153.6
+NT,Northern Territory,Darwin,-12.46,130.8,4,1,2,1,-19,133.5
+TAS,Tasmania,Hobart,-42.88,147.3,2,1,2,1,-42.3,150.6

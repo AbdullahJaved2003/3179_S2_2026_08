@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "100% stacked bar: where each era's copies were sold. Shows Japan's shrinking share and the growth of Europe and the rest of the world (which includes Australia).",
+  "data": {"url": "data/region_era.csv"},
+  "width": 380,
+  "height": {"step": 34},
+  "transform": [
+    {"calculate": "toNumber(datum.share)", "as": "share"},
+    {"calculate": "indexof(['North America', 'Europe', 'Japan', 'Rest of world'], datum.region)", "as": "regionOrder"},
+    {"calculate": "datum.EraYears + ' · ' + datum.EraName", "as": "eraLabel"}
+  ],
+  "encoding": {
+    "y": {"field": "eraLabel", "type": "nominal", "title": null, "sort": {"field": "EraOrder"}, "axis": {"ticks": false, "domain": false, "labelFontSize": 11.5}},
+    "x": {"field": "share", "type": "quantitative", "stack": "normalize", "title": null, "axis": {"format": ".0%", "values": [0, 0.25, 0.5, 0.75, 1], "grid": false}},
+    "order": {"field": "regionOrder"}
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "height": 24, "stroke": "#FFFFFF", "strokeWidth": 1},
+      "encoding": {
+        "color": {
+          "field": "region",
+          "type": "nominal",
+          "title": null,
+          "scale": {"domain": ["North America", "Europe", "Japan", "Rest of world"], "range": ["#1B8A8F", "#E3A21A", "#D64545", "#8D8798"]},
+          "legend": {"orient": "top", "direction": "horizontal", "columns": 4, "symbolType": "square", "labelFontSize": 11}
+        },
+        "tooltip": [
+          {"field": "EraYears", "title": "Years"},
+          {"field": "region", "title": "Region"},
+          {"field": "share", "title": "Share of copies", "format": ".1%"},
+          {"field": "sales", "type": "quantitative", "title": "Copies (millions)", "format": ",.0f"}
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.share >= 0.08"}],
+      "mark": {"type": "text", "color": "#FFFFFF", "fontSize": 10.5, "fontWeight": 700},
+      "encoding": {
+        "x": {"field": "share", "type": "quantitative", "stack": "normalize", "bandPosition": 0.5},
+        "text": {"field": "share", "type": "quantitative", "format": ".0%"}
+      }
+    }
+  ]
+}

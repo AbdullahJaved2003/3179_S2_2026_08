@@ -1,0 +1,95 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bump chart: each publisher's sales rank in each era. Ranks below 12th are gathered on one 'outside top 12' row. Colour = where the publisher is headquartered. Hover a line to follow one publisher.",
+  "data": {"url": "data/publisher_rank_era.csv"},
+  "width": 760,
+  "height": 400,
+  "transform": [
+    {"calculate": "toNumber(datum.EraOrder)", "as": "EraOrder"},
+    {"calculate": "toNumber(datum.rank)", "as": "rank"},
+    {"calculate": "min(datum.rank, 13)", "as": "rankShown"},
+    {"calculate": "replace(replace(replace(replace(replace(replace(datum.Publisher, 'Sony Computer Entertainment', 'Sony'), 'Konami Digital Entertainment', 'Konami'), 'Namco Bandai Games', 'Namco Bandai'), 'Warner Bros. Interactive Entertainment', 'Warner Bros.'), ' Interactive', ''), ' Corporation', '')", "as": "short"}
+  ],
+  "encoding": {
+    "x": {
+      "field": "EraOrder",
+      "type": "ordinal",
+      "title": null,
+      "scale": {"padding": 0.3},
+      "axis": {
+        "labelAngle": 0,
+        "orient": "top",
+        "domain": false,
+        "ticks": false,
+        "offset": 10,
+        "labelFontSize": 11.5,
+        "labelExpr": "[['', ''], ['1980–85', 'Early consoles'], ['1986–94', '8 & 16-bit'], ['1995–2000', '3D revolution'], ['2001–05', 'PS2 era'], ['2006–12', 'Motion & HD'], ['2013–15', 'Modern']][datum.value]"
+      }
+    },
+    "y": {
+      "field": "rankShown",
+      "type": "quantitative",
+      "title": null,
+      "scale": {"domain": [13.6, 0.4], "nice": false, "zero": false},
+      "axis": {"values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], "labelExpr": "datum.value === 13 ? 'below 12th' : '#' + datum.value", "grid": false, "domain": false, "ticks": false, "labelColor": "#8A8292"}
+    },
+    "color": {
+      "field": "hub_name",
+      "type": "nominal",
+      "title": "Headquarters",
+      "scale": {"domain": ["North America", "Europe", "Japan"], "range": ["#1B8A8F", "#E3A21A", "#D64545"]},
+      "legend": {"orient": "bottom", "direction": "horizontal", "titleOrient": "left"}
+    },
+    "opacity": {"condition": {"param": "hoverPub", "empty": true, "value": 1}, "value": 0.12}
+  },
+  "layer": [
+    {
+      "data": {"values": [{"y": 13}]},
+      "mark": {"type": "rule", "strokeDash": [3, 4], "color": "#CFC6B8"},
+      "encoding": {"y": {"field": "y", "type": "quantitative"}, "x": null, "color": null, "opacity": null}
+    },
+    {
+      "mark": {"type": "line", "strokeWidth": 3, "interpolate": "linear"},
+      "encoding": {"detail": {"field": "Publisher"}}
+    },
+    {
+      "params": [
+        {"name": "hoverPub", "select": {"type": "point", "fields": ["Publisher"], "on": "mouseover", "clear": "mouseout"}}
+      ],
+      "mark": {"type": "circle", "opacity": 1, "stroke": "#FFFFFF", "strokeWidth": 1.5},
+      "encoding": {
+        "size": {"condition": {"test": "datum.rank > 12", "value": 40}, "value": 230},
+        "tooltip": [
+          {"field": "Publisher"},
+          {"field": "hub_name", "title": "Headquarters"},
+          {"field": "EraName", "title": "Era"},
+          {"field": "rank", "title": "Rank"},
+          {"field": "sales", "type": "quantitative", "title": "Copies sold in era (millions)", "format": ",.1f"}
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.rank <= 12"}],
+      "mark": {"type": "text", "fontSize": 10, "fontWeight": 700},
+      "encoding": {"text": {"field": "rank"}, "color": {"value": "#FFFFFF"}}
+    },
+    {
+      "transform": [
+        {"filter": "datum.rank <= 12"},
+        {"joinaggregate": [{"op": "max", "field": "EraOrder", "as": "lastEra"}], "groupby": ["Publisher"]},
+        {"filter": "datum.EraOrder === datum.lastEra"}
+      ],
+      "mark": {"type": "text", "align": "left", "dx": 12, "fontSize": 11.5, "fontWeight": 700, "stroke": "#FFFFFF", "strokeWidth": 4, "strokeJoin": "round"},
+      "encoding": {"text": {"field": "short"}, "color": {"value": "#FFFFFF"}}
+    },
+    {
+      "transform": [
+        {"filter": "datum.rank <= 12"},
+        {"joinaggregate": [{"op": "max", "field": "EraOrder", "as": "lastEra"}], "groupby": ["Publisher"]},
+        {"filter": "datum.EraOrder === datum.lastEra"}
+      ],
+      "mark": {"type": "text", "align": "left", "dx": 12, "fontSize": 11.5, "fontWeight": 700},
+      "encoding": {"text": {"field": "short"}}
+    }
+  ]
+}

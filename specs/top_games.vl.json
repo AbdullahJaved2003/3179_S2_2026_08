@@ -1,0 +1,77 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bar chart: the ten best-selling games of the chosen era (copies across all platforms). Radio buttons switch era.",
+  "data": {"url": "data/top_games_era.csv"},
+  "width": 420,
+  "height": {"step": 27},
+  "params": [
+    {
+      "name": "era",
+      "value": 5,
+      "bind": {
+        "input": "radio",
+        "options": [1, 2, 3, 4, 5, 6],
+        "labels": ["1980–85", "1986–94", "1995–2000", "2001–05", "2006–12", "2013–15"],
+        "name": "Era: "
+      }
+    }
+  ],
+  "transform": [
+    {"calculate": "toNumber(datum.EraOrder)", "as": "EraOrder"},
+    {"calculate": "toNumber(datum.sales)", "as": "sales"},
+    {"filter": "datum.EraOrder === era"},
+    {"calculate": "format(datum.sales, '.1f') + 'M'", "as": "salesLabel"}
+  ],
+  "encoding": {
+    "y": {
+      "field": "Name",
+      "type": "nominal",
+      "sort": {"field": "sales", "order": "descending"},
+      "title": null,
+      "axis": {"labelLimit": 250, "labelFontSize": 12, "ticks": false, "domain": false}
+    },
+    "x": {
+      "field": "sales",
+      "type": "quantitative",
+      "title": "Copies sold, all platforms (millions)",
+      "scale": {"domain": [0, 85]},
+      "axis": {"grid": true, "gridColor": "#EDE6DA", "tickCount": 5}
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "cornerRadiusEnd": 3, "height": 17},
+      "encoding": {
+        "color": {
+          "field": "genre",
+          "type": "nominal",
+          "title": "Genre",
+          "scale": {
+            "domain": ["Action", "Sports", "Shooter", "Role-Playing", "Platform", "Misc", "Racing", "Fighting", "Simulation", "Puzzle", "Adventure", "Strategy"],
+            "range": ["#E4572E", "#2E86AB", "#545479", "#8E5BD0", "#E9A825", "#9A958C", "#D1495B", "#8C4A2F", "#4E9F6A", "#E07BA8", "#2A9D8F", "#6C8EAD"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "Name", "title": "Game"},
+          {"field": "genre", "title": "Genre"},
+          {"field": "publisher", "title": "Publisher"},
+          {"field": "platforms", "title": "Platforms"},
+          {"field": "sales", "title": "Copies sold (millions)", "format": ".2f"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "left", "dx": 5, "fontSize": 11, "color": "#4A4453"},
+      "encoding": {
+        "text": {"field": "salesLabel"}
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "left", "dx": 46, "fontSize": 10.5, "color": "#8A8292", "fontStyle": "italic"},
+      "encoding": {
+        "text": {"field": "genre"}
+      }
+    }
+  ]
+}

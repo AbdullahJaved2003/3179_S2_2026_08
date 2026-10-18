@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Waffle chart of 100 controller icons: ages of Australians who play video games (IGEA, Australia Plays 2025). Each icon = 1% of players.",
+  "data": {"sequence": {"start": 0, "stop": 100, "as": "i"}},
+  "width": 440,
+  "height": 290,
+  "transform": [
+    {"calculate": "datum.i < 19 ? 'Children' : datum.i < 90 ? 'Working age' : 'Retirement age'", "as": "group"},
+    {"calculate": "datum.i % 10", "as": "col"},
+    {"calculate": "floor(datum.i / 10)", "as": "row"},
+    {"calculate": "datum.group === 'Children' ? '19%' : datum.group === 'Working age' ? '71%' : '10%'", "as": "pct"}
+  ],
+  "params": [
+    {"name": "hoverGroup", "select": {"type": "point", "fields": ["group"], "on": "mouseover", "clear": "mouseout"}}
+  ],
+  "mark": {
+    "type": "point",
+    "filled": true,
+    "size": 560,
+    "shape": "M-1,-0.15 C-1,-0.55 -0.75,-0.65 -0.5,-0.65 L0.5,-0.65 C0.75,-0.65 1,-0.55 1,-0.15 L1.08,0.45 C1.12,0.75 0.85,0.85 0.65,0.62 L0.38,0.3 L-0.38,0.3 L-0.65,0.62 C-0.85,0.85 -1.12,0.75 -1.08,0.45 Z"
+  },
+  "encoding": {
+    "x": {"field": "col", "type": "ordinal", "axis": null},
+    "y": {"field": "row", "type": "ordinal", "axis": null},
+    "color": {
+      "field": "group",
+      "type": "nominal",
+      "title": null,
+      "scale": {"domain": ["Children", "Working age", "Retirement age"], "range": ["#E9A825", "#2D8A68", "#8E5BD0"]},
+      "legend": {"orient": "bottom", "direction": "horizontal", "labelExpr": "datum.label === 'Children' ? 'Children 19%' : datum.label === 'Working age' ? 'Working age 71%' : 'Retirement age 10%'", "symbolType": "square", "labelFontSize": 13}
+    },
+    "opacity": {"condition": {"param": "hoverGroup", "empty": true, "value": 1}, "value": 0.25},
+    "tooltip": [
+      {"field": "group", "title": "Age group"},
+      {"field": "pct", "title": "Share of Australian players"}
+    ]
+  }
+}

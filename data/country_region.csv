@@ -1,0 +1,250 @@
+id,name,region
+4,Afghanistan,Rest of world
+248,Åland Islands,Europe
+8,Albania,Europe
+12,Algeria,Rest of world
+16,American Samoa,Rest of world
+20,Andorra,Europe
+24,Angola,Rest of world
+660,Anguilla,Rest of world
+10,Antarctica,Rest of world
+28,Antigua and Barbuda,Rest of world
+32,Argentina,Rest of world
+51,Armenia,Rest of world
+533,Aruba,Rest of world
+36,Australia,Rest of world
+40,Austria,Europe
+31,Azerbaijan,Rest of world
+44,Bahamas,Rest of world
+48,Bahrain,Rest of world
+50,Bangladesh,Rest of world
+52,Barbados,Rest of world
+112,Belarus,Europe
+56,Belgium,Europe
+84,Belize,Rest of world
+204,Benin,Rest of world
+60,Bermuda,Rest of world
+64,Bhutan,Rest of world
+68,"Bolivia, Plurinational State of",Rest of world
+535,"Bonaire, Sint Eustatius and Saba",Rest of world
+70,Bosnia and Herzegovina,Europe
+72,Botswana,Rest of world
+74,Bouvet Island,Rest of world
+76,Brazil,Rest of world
+86,British Indian Ocean Territory,Rest of world
+96,Brunei Darussalam,Rest of world
+100,Bulgaria,Europe
+854,Burkina Faso,Rest of world
+108,Burundi,Rest of world
+132,Cabo Verde,Rest of world
+116,Cambodia,Rest of world
+120,Cameroon,Rest of world
+124,Canada,North America
+136,Cayman Islands,Rest of world
+140,Central African Republic,Rest of world
+148,Chad,Rest of world
+152,Chile,Rest of world
+156,China,Rest of world
+162,Christmas Island,Rest of world
+166,Cocos (Keeling) Islands,Rest of world
+170,Colombia,Rest of world
+174,Comoros,Rest of world
+178,Congo,Rest of world
+180,"Congo, Democratic Republic of the",Rest of world
+184,Cook Islands,Rest of world
+188,Costa Rica,Rest of world
+384,Côte d'Ivoire,Rest of world
+191,Croatia,Europe
+192,Cuba,Rest of world
+531,Curaçao,Rest of world
+196,Cyprus,Rest of world
+203,Czechia,Europe
+208,Denmark,Europe
+262,Djibouti,Rest of world
+212,Dominica,Rest of world
+214,Dominican Republic,Rest of world
+218,Ecuador,Rest of world
+818,Egypt,Rest of world
+222,El Salvador,Rest of world
+226,Equatorial Guinea,Rest of world
+232,Eritrea,Rest of world
+233,Estonia,Europe
+748,Eswatini,Rest of world
+231,Ethiopia,Rest of world
+238,Falkland Islands (Malvinas),Rest of world
+234,Faroe Islands,Europe
+242,Fiji,Rest of world
+246,Finland,Europe
+250,France,Europe
+254,French Guiana,Rest of world
+258,French Polynesia,Rest of world
+260,French Southern Territories,Rest of world
+266,Gabon,Rest of world
+270,Gambia,Rest of world
+268,Georgia,Rest of world
+276,Germany,Europe
+288,Ghana,Rest of world
+292,Gibraltar,Europe
+300,Greece,Europe
+304,Greenland,Rest of world
+308,Grenada,Rest of world
+312,Guadeloupe,Rest of world
+316,Guam,Rest of world
+320,Guatemala,Rest of world
+831,Guernsey,Europe
+324,Guinea,Rest of world
+624,Guinea-Bissau,Rest of world
+328,Guyana,Rest of world
+332,Haiti,Rest of world
+334,Heard Island and McDonald Islands,Rest of world
+336,Holy See,Europe
+340,Honduras,Rest of world
+344,Hong Kong,Rest of world
+348,Hungary,Europe
+352,Iceland,Europe
+356,India,Rest of world
+360,Indonesia,Rest of world
+364,"Iran, Islamic Republic of",Rest of world
+368,Iraq,Rest of world
+372,Ireland,Europe
+833,Isle of Man,Europe
+376,Israel,Rest of world
+380,Italy,Europe
+388,Jamaica,Rest of world
+392,Japan,Japan
+832,Jersey,Europe
+400,Jordan,Rest of world
+398,Kazakhstan,Rest of world
+404,Kenya,Rest of world
+296,Kiribati,Rest of world
+408,"Korea, Democratic People's Republic of",Rest of world
+410,"Korea, Republic of",Rest of world
+414,Kuwait,Rest of world
+417,Kyrgyzstan,Rest of world
+418,Lao People's Democratic Republic,Rest of world
+428,Latvia,Europe
+422,Lebanon,Rest of world
+426,Lesotho,Rest of world
+430,Liberia,Rest of world
+434,Libya,Rest of world
+438,Liechtenstein,Europe
+440,Lithuania,Europe
+442,Luxembourg,Europe
+446,Macao,Rest of world
+450,Madagascar,Rest of world
+454,Malawi,Rest of world
+458,Malaysia,Rest of world
+462,Maldives,Rest of world
+466,Mali,Rest of world
+470,Malta,Europe
+584,Marshall Islands,Rest of world
+474,Martinique,Rest of world
+478,Mauritania,Rest of world
+480,Mauritius,Rest of world
+175,Mayotte,Rest of world
+484,Mexico,Rest of world
+583,"Micronesia, Federated States of",Rest of world
+498,"Moldova, Republic of",Europe
+492,Monaco,Europe
+496,Mongolia,Rest of world
+499,Montenegro,Europe
+500,Montserrat,Rest of world
+504,Morocco,Rest of world
+508,Mozambique,Rest of world
+104,Myanmar,Rest of world
+516,Namibia,Rest of world
+520,Nauru,Rest of world
+524,Nepal,Rest of world
+528,"Netherlands, Kingdom of the",Europe
+540,New Caledonia,Rest of world
+554,New Zealand,Rest of world
+558,Nicaragua,Rest of world
+562,Niger,Rest of world
+566,Nigeria,Rest of world
+570,Niue,Rest of world
+574,Norfolk Island,Rest of world
+807,North Macedonia,Europe
+580,Northern Mariana Islands,Rest of world
+578,Norway,Europe
+512,Oman,Rest of world
+586,Pakistan,Rest of world
+585,Palau,Rest of world
+275,"Palestine, State of",Rest of world
+591,Panama,Rest of world
+598,Papua New Guinea,Rest of world
+600,Paraguay,Rest of world
+604,Peru,Rest of world
+608,Philippines,Rest of world
+612,Pitcairn,Rest of world
+616,Poland,Europe
+620,Portugal,Europe
+630,Puerto Rico,Rest of world
+634,Qatar,Rest of world
+638,Réunion,Rest of world
+642,Romania,Europe
+643,Russian Federation,Europe
+646,Rwanda,Rest of world
+652,Saint Barthélemy,Rest of world
+654,"Saint Helena, Ascension and Tristan da Cunha",Rest of world
+659,Saint Kitts and Nevis,Rest of world
+662,Saint Lucia,Rest of world
+663,Saint Martin (French part),Rest of world
+666,Saint Pierre and Miquelon,Rest of world
+670,Saint Vincent and the Grenadines,Rest of world
+882,Samoa,Rest of world
+674,San Marino,Europe
+678,Sao Tome and Principe,Rest of world
+682,Saudi Arabia,Rest of world
+686,Senegal,Rest of world
+688,Serbia,Europe
+690,Seychelles,Rest of world
+694,Sierra Leone,Rest of world
+702,Singapore,Rest of world
+534,Sint Maarten (Dutch part),Rest of world
+703,Slovakia,Europe
+705,Slovenia,Europe
+90,Solomon Islands,Rest of world
+706,Somalia,Rest of world
+710,South Africa,Rest of world
+239,South Georgia and the South Sandwich Islands,Rest of world
+728,South Sudan,Rest of world
+724,Spain,Europe
+144,Sri Lanka,Rest of world
+729,Sudan,Rest of world
+740,Suriname,Rest of world
+744,Svalbard and Jan Mayen,Europe
+752,Sweden,Europe
+756,Switzerland,Europe
+760,Syrian Arab Republic,Rest of world
+158,"Taiwan, Province of China",Rest of world
+762,Tajikistan,Rest of world
+834,"Tanzania, United Republic of",Rest of world
+764,Thailand,Rest of world
+626,Timor-Leste,Rest of world
+768,Togo,Rest of world
+772,Tokelau,Rest of world
+776,Tonga,Rest of world
+780,Trinidad and Tobago,Rest of world
+788,Tunisia,Rest of world
+792,Türkiye,Rest of world
+795,Turkmenistan,Rest of world
+796,Turks and Caicos Islands,Rest of world
+798,Tuvalu,Rest of world
+800,Uganda,Rest of world
+804,Ukraine,Europe
+784,United Arab Emirates,Rest of world
+826,United Kingdom of Great Britain and Northern Ireland,Europe
+840,United States of America,North America
+581,United States Minor Outlying Islands,Rest of world
+858,Uruguay,Rest of world
+860,Uzbekistan,Rest of world
+548,Vanuatu,Rest of world
+862,"Venezuela, Bolivarian Republic of",Rest of world
+704,Viet Nam,Rest of world
+92,Virgin Islands (British),Rest of world
+850,Virgin Islands (U.S.),Rest of world
+876,Wallis and Futuna,Rest of world
+732,Western Sahara,Rest of world
+887,Yemen,Rest of world
+894,Zambia,Rest of world
+716,Zimbabwe,Rest of world

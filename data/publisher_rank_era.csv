@@ -1,0 +1,77 @@
+EraOrder,EraYears,EraName,Publisher,sales,rank,hub_name
+1,1980–85,Early consoles,Activision,16.07,3,North America
+2,1986–94,8 & 16-bit,Activision,4.42,12,North America
+3,1995–2000,3D revolution,Activision,38.3,7,North America
+4,2001–05,PS2 era,Activision,140.5,4,North America
+5,2006–12,Motion & HD,Activision,394.8,3,North America
+6,2013–15,Modern,Activision,123.6,3,North America
+1,1980–85,Early consoles,Atari,39.63,2,North America
+2,1986–94,8 & 16-bit,Atari,1.67,24,North America
+3,1995–2000,3D revolution,Atari,8.57,23,North America
+4,2001–05,PS2 era,Atari,66.27,9,North America
+5,2006–12,Motion & HD,Atari,30.61,19,North America
+1,1980–85,Early consoles,Capcom,1,12,Japan
+2,1986–94,8 & 16-bit,Capcom,34.28,2,Japan
+3,1995–2000,3D revolution,Capcom,11.26,20,Japan
+4,2001–05,PS2 era,Capcom,47.06,13,Japan
+5,2006–12,Motion & HD,Capcom,90.64,14,Japan
+6,2013–15,Modern,Capcom,13.59,15,Japan
+3,1995–2000,3D revolution,Eidos Interactive,43.32,5,Europe
+4,2001–05,PS2 era,Eidos Interactive,26.16,16,Europe
+5,2006–12,Motion & HD,Eidos Interactive,27.27,20,Europe
+2,1986–94,8 & 16-bit,Electronic Arts,0.71,30,North America
+3,1995–2000,3D revolution,Electronic Arts,109.4,3,North America
+4,2001–05,PS2 era,Electronic Arts,322.3,1,North America
+5,2006–12,Motion & HD,Electronic Arts,503.6,2,North America
+6,2013–15,Modern,Electronic Arts,145.1,1,North America
+2,1986–94,8 & 16-bit,Enix Corporation,14.21,6,Japan
+3,1995–2000,3D revolution,Enix Corporation,12.96,18,Japan
+4,2001–05,PS2 era,Enix Corporation,6.57,29,Japan
+1,1980–85,Early consoles,Imagic,4.82,6,North America
+2,1986–94,8 & 16-bit,Konami Digital Entertainment,13.99,7,Japan
+3,1995–2000,3D revolution,Konami Digital Entertainment,50.39,4,Japan
+4,2001–05,PS2 era,Konami Digital Entertainment,83.4,7,Japan
+5,2006–12,Motion & HD,Konami Digital Entertainment,112.3,10,Japan
+6,2013–15,Modern,Konami Digital Entertainment,17.29,13,Japan
+1,1980–85,Early consoles,Namco Bandai Games,4.89,5,Japan
+2,1986–94,8 & 16-bit,Namco Bandai Games,21.28,4,Japan
+3,1995–2000,3D revolution,Namco Bandai Games,32.85,10,Japan
+4,2001–05,PS2 era,Namco Bandai Games,51.6,11,Japan
+5,2006–12,Motion & HD,Namco Bandai Games,101.4,11,Japan
+6,2013–15,Modern,Namco Bandai Games,35.16,9,Japan
+1,1980–85,Early consoles,Nintendo,106.5,1,Japan
+2,1986–94,8 & 16-bit,Nintendo,263.1,1,Japan
+3,1995–2000,3D revolution,Nintendo,264,1,Japan
+4,2001–05,PS2 era,Nintendo,319.9,2,Japan
+5,2006–12,Motion & HD,Nintendo,699,1,Japan
+6,2013–15,Modern,Nintendo,128.5,2,Japan
+1,1980–85,Early consoles,Parker Bros.,4.97,4,North America
+1,1980–85,Early consoles,Sega,0.4,21,Japan
+2,1986–94,8 & 16-bit,Sega,24.38,3,Japan
+3,1995–2000,3D revolution,Sega,27.19,12,Japan
+4,2001–05,PS2 era,Sega,54.95,10,Japan
+5,2006–12,Motion & HD,Sega,150.5,9,Japan
+6,2013–15,Modern,Sega,12.45,16,Japan
+2,1986–94,8 & 16-bit,Sony Computer Entertainment,3.43,14,Japan
+3,1995–2000,3D revolution,Sony Computer Entertainment,190,2,Japan
+4,2001–05,PS2 era,Sony Computer Entertainment,155,3,Japan
+5,2006–12,Motion & HD,Sony Computer Entertainment,209.7,5,Japan
+6,2013–15,Modern,Sony Computer Entertainment,42.64,7,Japan
+2,1986–94,8 & 16-bit,SquareSoft,15.4,5,Japan
+3,1995–2000,3D revolution,SquareSoft,39.75,6,Japan
+4,2001–05,PS2 era,SquareSoft,2.5,43,Japan
+3,1995–2000,3D revolution,THQ,35.57,8,North America
+4,2001–05,PS2 era,THQ,129.4,5,North America
+5,2006–12,Motion & HD,THQ,175.1,7,North America
+6,2013–15,Modern,THQ,0.36,58,North America
+3,1995–2000,3D revolution,Take-Two Interactive,15.88,14,North America
+4,2001–05,PS2 era,Take-Two Interactive,101.7,6,North America
+5,2006–12,Motion & HD,Take-Two Interactive,181.1,6,North America
+6,2013–15,Modern,Take-Two Interactive,97.7,4,North America
+3,1995–2000,3D revolution,Ubisoft,13.1,17,Europe
+4,2001–05,PS2 era,Ubisoft,69.98,8,Europe
+5,2006–12,Motion & HD,Ubisoft,298.3,4,Europe
+6,2013–15,Modern,Ubisoft,82.13,5,Europe
+4,2001–05,PS2 era,Warner Bros. Interactive Entertainment,0.73,72,North America
+5,2006–12,Motion & HD,Warner Bros. Interactive Entertainment,77.57,15,North America
+6,2013–15,Modern,Warner Bros. Interactive Entertainment,60.52,6,North America

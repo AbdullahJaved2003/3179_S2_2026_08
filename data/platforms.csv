@@ -1,0 +1,25 @@
+code,name,maker,type,start,end,peak_year,peak_sales,total,games,top_game
+2600,Atari 2600,Atari,Home,1980,1988,1981,35.77,86.6,116,Pac-Man
+NES,Nintendo Entertainment System,Nintendo,Home,1983,1994,1985,53.44,251.1,98,Super Mario Bros.
+GB,Game Boy,Nintendo,Handheld,1989,2002,1989,64.98,254.4,97,Pokemon Red/Pokemon Blue
+SNES,Super Nintendo,Nintendo,Home,1990,1997,1993,40.01,200,239,Super Mario World
+GEN,Sega Genesis / Mega Drive,Sega,Home,1990,1995,1992,12.66,28.4,27,Sonic the Hedgehog 2
+PC,PC,PC,Home,1992,2016,2011,35.25,252.5,905,The Sims 3
+SAT,Sega Saturn,Sega,Home,1994,1999,1995,11.58,33.6,173,Virtua Fighter 2
+PS,PlayStation,Sony,Home,1995,2002,1998,169.6,727.4,1189,Gran Turismo
+N64,Nintendo 64,Nintendo,Home,1996,2002,1999,57.96,218.2,316,Super Mario 64
+DC,Dreamcast,Sega,Home,1998,2003,2000,5.99,16,52,Sonic Adventure
+PS2,PlayStation 2,Sony,Home,2000,2010,2004,211.8,1234,2127,Grand Theft Auto: San Andreas
+GBA,Game Boy Advance,Nintendo,Handheld,2001,2008,2004,78.09,313.6,811,Pokemon Ruby/Pokemon Sapphire
+XB,Xbox,Microsoft,Home,2001,2007,2004,65.5,252.1,803,Halo 2
+GC,GameCube,Nintendo,Home,2001,2007,2002,51.93,197.1,542,Super Smash Bros. Melee
+DS,Nintendo DS,Nintendo,Handheld,2004,2013,2007,149.4,818.7,2131,New Super Mario Bros.
+PSP,PlayStation Portable,Sony,Handheld,2004,2014,2006,55.85,291.7,1197,Grand Theft Auto: Liberty City Stories
+X360,Xbox 360,Microsoft,Home,2006,2016,2010,171.1,968.8,1227,Kinect Adventures!
+PS3,PlayStation 3,Sony,Home,2006,2016,2011,159.4,946.8,1272,Grand Theft Auto V
+Wii,Wii,Nintendo,Home,2006,2014,2009,210.4,909.8,1290,Wii Sports
+3DS,Nintendo 3DS,Nintendo,Handheld,2011,2016,2011,62.53,239.7,465,Pokemon X/Pokemon Y
+PSV,PlayStation Vita,Sony,Handheld,2011,2016,2012,18.53,58.2,350,Minecraft
+WiiU,Wii U,Nintendo,Home,2012,2016,2014,22.51,78.6,133,Mario Kart 8
+PS4,PlayStation 4,Sony,Home,2013,2016,2015,115.3,238.8,228,Call of Duty: Black Ops 3
+XOne,Xbox One,Microsoft,Home,2013,2016,2015,57.66,128.7,159,Call of Duty: Black Ops 3

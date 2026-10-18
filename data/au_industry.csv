@@ -1,0 +1,10 @@
+fy,year,revenue_m,employees,studios_surveyed,note
+FY2016,2016,114.8,842,63,
+FY2017,2017,118.5,928,114,
+FY2019,2019,143.5,1275,143,
+FY2020,2020,184.6,1245,97,
+FY2021,2021,226.5,1327,187,
+FY2022,2022,284.4,2104,102,
+FY2023,2023,345.5,2458,111,
+FY2024,2024,339.1,2465,137,
+FY2025,2025,608.5,2443,141,"New method: adds Sensor Tower sales data, not directly comparable"

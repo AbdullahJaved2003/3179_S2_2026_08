@@ -1,0 +1,74 @@
+id,parent,name,genre,sales,genre_total
+root,,All games,,,
+Action,root,Action,Action,,1703
+Action|Take-Two Interactive,Action,Take-Two,Action,211.1,1703
+Action|Activision,Action,Activision,Action,141.6,1703
+Action|Ubisoft,Action,Ubisoft,Action,139.2,1703
+Action|Nintendo,Action,Nintendo,Action,125,1703
+Action|other,Action,Other publishers,Action,1086,1703
+Adventure,root,Adventure,Adventure,,232.8
+Adventure|Nintendo,Adventure,Nintendo,Adventure,35.71,232.8
+Adventure|Ubisoft,Adventure,Ubisoft,Adventure,22.19,232.8
+Adventure|THQ,Adventure,THQ,Adventure,19.98,232.8
+Adventure|Disney Interactive Studios,Adventure,Disney,Adventure,17.76,232.8
+Adventure|other,Adventure,Other publishers,Adventure,137.2,232.8
+Fighting,root,Fighting,Fighting,,440.2
+Fighting|THQ,Fighting,THQ,Fighting,72.86,440.2
+Fighting|Namco Bandai Games,Fighting,Namco Bandai,Fighting,58.48,440.2
+Fighting|Nintendo,Fighting,Nintendo,Fighting,53.35,440.2
+Fighting|Capcom,Fighting,Capcom,Fighting,32.01,440.2
+Fighting|other,Fighting,Other publishers,Fighting,223.5,440.2
+Misc,root,Misc,Misc,,788.7
+Misc|Nintendo,Misc,Nintendo,Misc,180.7,788.7
+Misc|Ubisoft,Misc,Ubisoft,Misc,97.53,788.7
+Misc|Sony Computer Entertainment,Misc,Sony,Misc,80.8,788.7
+Misc|Activision,Misc,Activision,Misc,76.55,788.7
+Misc|other,Misc,Other publishers,Misc,353.1,788.7
+Platform,root,Platform,Platform,,827.1
+Platform|Nintendo,Platform,Nintendo,Platform,426.2,827.1
+Platform|Sony Computer Entertainment,Platform,Sony,Platform,102.9,827.1
+Platform|Sega,Platform,Sega,Platform,60.81,827.1
+Platform|THQ,Platform,THQ,Platform,40.99,827.1
+Platform|other,Platform,Other publishers,Platform,196.2,827.1
+Puzzle,root,Puzzle,Puzzle,,242.2
+Puzzle|Nintendo,Puzzle,Nintendo,Puzzle,124.9,242.2
+Puzzle|Atari,Puzzle,Atari,Puzzle,20.77,242.2
+Puzzle|THQ,Puzzle,THQ,Puzzle,9.25,242.2
+Puzzle|Warner Bros. Interactive Entertainment,Puzzle,Warner Bros.,Puzzle,6.65,242.2
+Puzzle|other,Puzzle,Other publishers,Puzzle,80.66,242.2
+Racing,root,Racing,Racing,,725.1
+Racing|Nintendo,Racing,Nintendo,Racing,151.3,725.1
+Racing|Electronic Arts,Racing,EA,Racing,145.7,725.1
+Racing|Sony Computer Entertainment,Racing,Sony,Racing,110.6,725.1
+Racing|THQ,Racing,THQ,Racing,40.17,725.1
+Racing|other,Racing,Other publishers,Racing,277.3,725.1
+Role-Playing,root,Role-Playing,Role-Playing,,917
+Role-Playing|Nintendo,Role-Playing,Nintendo,Role-Playing,284.6,917
+Role-Playing|Square Enix,Role-Playing,Square Enix,Role-Playing,94.78,917
+Role-Playing|Bethesda Softworks,Role-Playing,Bethesda Softworks,Role-Playing,54.16,917
+Role-Playing|SquareSoft,Role-Playing,SquareSoft,Role-Playing,52.59,917
+Role-Playing|other,Role-Playing,Other publishers,Role-Playing,430.9,917
+Shooter,root,Shooter,Shooter,,1008
+Shooter|Activision,Shooter,Activision,Shooter,292.2,1008
+Shooter|Electronic Arts,Shooter,EA,Shooter,157.3,1008
+Shooter|Microsoft Game Studios,Shooter,Microsoft,Shooter,95.46,1008
+Shooter|Nintendo,Shooter,Nintendo,Shooter,69.34,1008
+Shooter|other,Shooter,Other publishers,Shooter,393.6,1008
+Simulation,root,Simulation,Simulation,,389.3
+Simulation|Electronic Arts,Simulation,EA,Simulation,89.53,389.3
+Simulation|Nintendo,Simulation,Nintendo,Simulation,85.23,389.3
+Simulation|Ubisoft,Simulation,Ubisoft,Simulation,44.19,389.3
+Simulation|Konami Digital Entertainment,Simulation,Konami,Simulation,32.31,389.3
+Simulation|other,Simulation,Other publishers,Simulation,138,389.3
+Sports,root,Sports,Sports,,1295
+Sports|Electronic Arts,Sports,EA,Sports,457.9,1295
+Sports|Nintendo,Sports,Nintendo,Sports,218,1295
+Sports|Konami Digital Entertainment,Sports,Konami,Sports,96.94,1295
+Sports|Activision,Sports,Activision,Sports,75.16,1295
+Sports|other,Sports,Other publishers,Sports,446.6,1295
+Strategy,root,Strategy,Strategy,,172.8
+Strategy|Nintendo,Strategy,Nintendo,Strategy,26.67,172.8
+Strategy|Activision,Strategy,Activision,Strategy,17.7,172.8
+Strategy|Electronic Arts,Strategy,EA,Strategy,14.08,172.8
+Strategy|Namco Bandai Games,Strategy,Namco Bandai,Strategy,11.83,172.8
+Strategy|other,Strategy,Other publishers,Strategy,102.5,172.8

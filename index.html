@@ -1,13 +1,353 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-    <title>My first HTML Dcoument</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Press Start: How Video Games Grew Up</title>
+  <meta name="description" content="A data story about 35 years of video games — the eras, genres, publishers and markets that shaped the industry, and where Australia fits in.">
+  <meta name="author" content="Abdullah Javed">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Pixelify+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0/build/vega.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0/build/vega-lite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0/build/vega-embed.min.js"></script>
 </head>
 <body>
-   <h2> My First HTML Document  </h2>
 
-   <h3> Heading 1 </h3>
-   <p>My First Paragraph.</p>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">Press<span>▶</span>Start</a>
+    <ul class="levels">
+      <li><a href="#eras">1 · Eras</a></li>
+      <li><a href="#genres">2 · Genres</a></li>
+      <li><a href="#makers">3 · Makers</a></li>
+      <li><a href="#markets">4 · Markets</a></li>
+      <li><a href="#australia">5 · Australia</a></li>
+      <li><a href="#about">Data &amp; credits</a></li>
+    </ul>
+  </div>
+</header>
 
+<section class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">A data story · 1980–2015, and Australia today</p>
+    <h1>Press Start<span class="blink">_</span><br>How video games grew up</h1>
+    <p class="lede">From Atari cartridges to Call of Duty, games went from a niche toy to one of the world’s biggest entertainment industries. This story follows 35 years of best-selling games across five “levels”: the console eras, the genres we love, the companies that make them, the markets that buy them, and finally Australia, where nine in ten households now play.</p>
+    <p class="byline">By <strong>Abdullah Javed 33559023</strong></p>
+    <div class="stats">
+      <div class="stat"><span class="num">8.7 bn</span><span class="label">copies of games sold worldwide, 1980–2015 (games selling over 100,000 copies)</span></div>
+      <div class="stat"><span class="num">15,978</span><span class="label">game releases on 31 platforms from 563 publishers</span></div>
+      <div class="stat"><span class="num">9 in 10</span><span class="label">Australian households play video games (2025)</span></div>
+      <div class="stat"><span class="num">$608.5M</span><span class="label">earned by Australian game studios in 2024–25, 95% of it from overseas</span></div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<!-- ======================= LEVEL 1 ======================= -->
+<section class="level" id="eras">
+  <div class="wrap">
+    <div class="level-head">
+      <span class="level-tag">Level 1</span>
+      <h2>The eras of play</h2>
+      <p>The video game market has crashed, been reborn and changed hands several times. Each era was defined by the consoles people bought, and by who made them.</p>
+    </div>
+
+    <figure class="viz">
+      <figcaption class="viz-head">
+        <h3>Three companies took turns leading a market that grew 40-fold from its 1983 low</h3>
+        <p class="how">Streamgraph: the thickness of each band is the number of game copies sold that year for that company’s platforms. Shaded columns mark console eras. Click a company in the legend to highlight it; hover for exact numbers.</p>
+      </figcaption>
+      <div class="chart" data-spec="specs/makers_stream.vl.json"></div>
+      <p class="viz-foot">Source: VGChartz via Gregory Smith (2016). Copies of games selling over 100,000 units. · <a href="specs/makers_stream.vl.json">Chart spec (JSON)</a></p>
+    </figure>
+
+    <div class="trio">
+      <div class="callout">
+        <span class="big">17M → 679M</span>
+        <span class="small">copies sold in 1983, the year of the crash, versus the 2008 peak</span>
+      </div>
+      <p>After the 1983 crash wiped out Atari, <span class="key k-nintendo"></span><strong>Nintendo</strong> rebuilt the market almost alone: in 1990 its platforms carried 95% of sales. Sony’s <span class="key k-sony"></span><strong>PlayStation</strong> took the lead from 1995, and <span class="key k-microsoft"></span><strong>Microsoft’s Xbox</strong> joined in 2001.</p>
+      <p>The drop after 2008 is partly real, as the Wii and DS craze faded. It is also partly a blind spot: VGChartz counts boxed copies, and more and more games were being downloaded instead.</p>
+    </div>
+
+    <figure class="viz">
+      <figcaption class="viz-head">
+        <h3>The PlayStation 2 sold 1.2 billion games; the DS led the handhelds with 819 million</h3>
+        <p class="how">Timeline: each bar spans the years that carried at least 1% of a platform’s game sales; ○ marks its best year and the label shows lifetime game sales. Hover a bar to highlight that company’s family of consoles.</p>
+      </figcaption>
+      <div class="chart" data-spec="specs/platform_timeline.vl.json"></div>
+      <p class="viz-foot">Source: VGChartz via Gregory Smith (2016). Bars reaching the right edge were still selling when the data ends. · <a href="specs/platform_timeline.vl.json">Chart spec (JSON)</a></p>
+    </figure>
+  </div>
+</section>
+
+<!-- ======================= LEVEL 2 ======================= -->
+<section class="level" id="genres">
+  <div class="wrap">
+    <div class="level-head">
+      <span class="level-tag">Level 2</span>
+      <h2>What we play</h2>
+      <p>A single smash hit can define a whole year. Over time, players moved from jumping on platforms to shooting in first person.</p>
+    </div>
+
+    <figure class="viz">
+      <figcaption class="viz-head">
+        <h3>From Mario’s platforms to Call of Duty’s battlefields</h3>
+        <p class="how">Heatmap: each cell is one genre’s share of all copies sold that year, so darker means more popular. Labels name the hit behind the darkest cells. Hover a row to focus on one genre.</p>
+      </figcaption>
+      <div class="chart" data-spec="specs/genre_heatmap.vl.json"></div>
+      <p class="viz-foot">Source: VGChartz via Gregory Smith (2016). Early years contain few games, so single hits swing the shares strongly. · <a href="specs/genre_heatmap.vl.json">Chart spec (JSON)</a></p>
+    </figure>
+
+    <div class="prose">
+      <p>In 1985, <strong>platform games</strong> were 80% of all sales, almost entirely because of Super Mario Bros. By 2015 they were just 2%. <strong>Shooters</strong> rose from 3% in 2000 to 25% in 2015, and <strong>action</strong> games became the biggest genre of all.</p>
+    </div>
+
+    <figure class="viz">
+      <figcaption class="viz-head">
+        <h3>Some genres belong to one publisher; action belongs to everyone</h3>
+        <p class="how">Treemap: area is copies sold from 1980 to 2015. Each coloured block is a genre, split into its four biggest publishers plus everyone else. Hover a tile for details.</p>
+      </figcaption>
+      <div class="chart" data-spec="specs/genre_treemap.vg.json"></div>
+      <p class="viz-foot">Source: VGChartz via Gregory Smith (2016). Built with Vega (treemap layout). · <a href="specs/genre_treemap.vg.json">Chart spec (JSON)</a></p>
+    </figure>
+
+    <div class="split">
+      <div class="prose">
+        <p>Action is the biggest genre, with 1.7 billion copies, yet no one owns it: 64% of its sales come from publishers outside its top four. Other genres are near-monopolies. <strong>EA</strong> sold 458 million sports games, and <strong>Nintendo</strong> sold more than half of all platformers.</p>
+        <div class="callout">
+          <span class="big">82.7M</span>
+          <span class="small">copies of Wii Sports, the best-selling game in the data. It came bundled with the Wii console in most countries.</span>
+        </div>
+        <p>Switch between eras to see how each generation’s blockbusters changed, from Duck Hunt and Tetris to Pokémon, Grand Theft Auto and Call of Duty.</p>
+      </div>
+      <figure class="viz bindings-first">
+        <figcaption class="viz-head">
+          <h3>The ten biggest games of each era</h3>
+          <p class="how">Copies sold across all platforms; colour shows the genre. Pick an era with the buttons. The scale stays fixed so eras can be compared.</p>
+        </figcaption>
+        <div class="chart" data-spec="specs/top_games.vl.json"></div>
+        <p class="viz-foot">Source: VGChartz via Gregory Smith (2016). · <a href="specs/top_games.vl.json">Chart spec (JSON)</a></p>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= LEVEL 3 ======================= -->
+<section class="level" id="makers">
+  <div class="wrap">
+    <div class="level-head">
+      <span class="level-tag">Level 3</span>
+      <h2>Who makes the games</h2>
+      <p>Publishers fund, market and sell games. Their league table tells the story of a power shift from Japan to the United States.</p>
+    </div>
+
+    <figure class="viz">
+      <figcaption class="viz-head">
+        <h3>In the 8 &amp; 16-bit era, all six top publishers were Japanese. By 2013–15, only Nintendo remained</h3>
+        <p class="how">Bump chart: each line follows one publisher’s sales rank across the eras. Colour shows where it is headquartered. Publishers that fall below 12th drop to the dashed line. Hover a dot to follow one publisher.</p>
+      </figcaption>
+      <div class="chart" data-spec="specs/publisher_bump.vl.json"></div>
+      <p class="viz-foot">Source: VGChartz via Gregory Smith (2016). Shows every publisher that reached the top six in at least one era. · <a href="specs/publisher_bump.vl.json">Chart spec (JSON)</a></p>
+    </figure>
+
+    <div class="prose">
+      <p>Nintendo finished first in four of the six eras and second in the other two. <strong>Electronic Arts</strong> made the biggest climb, from 30th in 1986–94 to 1st in 2001–05. US publishers like Activision, Take-Two (publisher of Grand Theft Auto) and Warner Bros. rose with the HD consoles, and France’s Ubisoft broke into the top five.</p>
+    </div>
+
+    <figure class="viz">
+      <figcaption class="viz-head">
+        <h3>The industry lives in a handful of cities</h3>
+        <p class="how">Proportional symbol map: headquarters of the 30 biggest publishers, which sold 90.7% of all copies, grouped by city. Circle area is copies sold from 1980 to 2015, on the same scale in all three panels. Hover a circle to see which publishers it holds.</p>
+      </figcaption>
+      <div class="chart" data-spec="specs/publisher_hq_map.vl.json"></div>
+      <p class="viz-foot">Sources: VGChartz via Gregory Smith (2016); headquarters from each company’s Wikipedia article; map from Natural Earth. Projections: Albers (USA), Lambert conformal conic (Europe), Mercator (Japan). · <a href="specs/publisher_hq_map.vl.json">Chart spec (JSON)</a></p>
+    </figure>
+
+    <div class="split flip">
+      <figure class="viz bindings-first">
+        <figcaption class="viz-head">
+          <h3>Japan makes games for the world</h3>
+          <p class="how">Flow map seen from above the North Pole. Each band starts wide at the publishers’ home region and tapers towards the market where their games were sold; width is copies sold. Rings show the share sold at home. Use the buttons to isolate one region’s publishers.</p>
+        </figcaption>
+        <div class="chart" data-spec="specs/export_flows.vl.json"></div>
+        <p class="viz-foot">Source: VGChartz via Gregory Smith (2016), the same 30 publishers. Azimuthal equal-area projection. · <a href="specs/export_flows.vl.json">Chart spec (JSON)</a></p>
+      </figure>
+      <div class="prose">
+        <div class="callout jp">
+          <span class="big">28%</span>
+          <span class="small">of Japanese publishers’ games were sold in Japan. The rest went overseas.</span>
+        </div>
+        <p>Kyoto (Nintendo alone, 1.78 billion copies) and Tokyo (eight publishers, 1.68 billion) are the two biggest dots on the map. Japanese publishers sold their games mainly abroad, especially to North America.</p>
+        <div class="callout na">
+          <span class="big">58%</span>
+          <span class="small">of North American publishers’ games were sold at home.</span>
+        </div>
+        <p>US publishers relied on their huge home market and sold very little in Japan. European publishers such as Ubisoft sold more in North America (51%) than in Europe (35%).</p>
+        <p>The rest of the world, Australia included, bought between 8% and 11% of each group’s games. Hover the rings for the exact numbers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= LEVEL 4 ======================= -->
+<section class="level" id="markets">
+  <div class="wrap">
+    <div class="level-head">
+      <span class="level-tag">Level 4</span>
+      <h2>Where games are played</h2>
+      <p>VGChartz splits sales into four regions: North America, Europe, Japan and the rest of the world, which includes Australia. Each has its own taste.</p>
+    </div>
+
+    <figure class="viz bindings-first">
+      <figcaption class="viz-head">
+        <h3>Japan plays role-playing games; the West plays shooters</h3>
+        <p class="how">Choropleth map: each country is shaded by the chosen genre’s share of its sales region’s copies, 1980–2015. Choose a genre from the menu. Countries share their region’s value because the data is only reported for four regions.</p>
+      </figcaption>
+      <div class="chart" data-spec="specs/genre_world_map.vl.json"></div>
+      <p class="viz-foot">Source: VGChartz via Gregory Smith (2016); countries assigned to regions using ISO 3166 / UN regions. Equal Earth projection, so country areas are true to size. · <a href="specs/genre_world_map.vl.json">Chart spec (JSON)</a></p>
+    </figure>
+
+    <div class="split">
+      <div class="prose">
+        <p>Role-playing games such as Pokémon, Final Fantasy and Dragon Quest make up <strong>27%</strong> of Japan’s sales, compared with about 8% in every other region. Shooters show the reverse: about 13% of sales in North America, Europe and the rest of the world, but only 3% in Japan.</p>
+        <p>Australia sits in the “rest of the world” region, whose tastes closely match Europe’s and North America’s. Action and sports games lead.</p>
+        <div class="callout jp">
+          <span class="big">40% → 12%</span>
+          <span class="small">Japan’s share of world game sales, 1986–94 versus 2013–15</span>
+        </div>
+        <p>Europe grew from 6% to 36% of sales, and the rest of the world, Australia included, from about 1% to 11%.</p>
+      </div>
+      <figure class="viz">
+        <figcaption class="viz-head">
+          <h3>The market spread beyond the US and Japan</h3>
+          <p class="how">Each bar is one era’s copies, split by where they were sold. Hover for exact numbers.</p>
+        </figcaption>
+        <div class="chart" data-spec="specs/region_eras.vl.json"></div>
+        <p class="viz-foot">Source: VGChartz via Gregory Smith (2016). · <a href="specs/region_eras.vl.json">Chart spec (JSON)</a></p>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= LEVEL 5 ======================= -->
+<section class="level level-aus" id="australia">
+  <div class="wrap">
+    <div class="level-head">
+      <span class="level-tag">Level 5</span>
+      <h2>Australia: player two has entered</h2>
+      <p>Australia was always a small slice of world sales, but it is now a nation of players, and a growing exporter of games.</p>
+    </div>
+
+    <div class="split">
+      <div class="prose">
+        <div class="callout aus">
+          <span class="big">90%</span>
+          <span class="small">of Australian households play video games</span>
+        </div>
+        <p>Gaming is no longer a teenage hobby. If you gathered 100 Australians who play video games, 71 would be of working age, 19 would be children and 10 would be retirees. The average player is about 35.</p>
+        <p>And for the first time, more women (51%) than men (48%) play.</p>
+      </div>
+      <figure class="viz">
+        <figcaption class="viz-head">
+          <h3>If 100 Australian players were in one room</h3>
+          <p class="how">Waffle chart: each controller is 1% of Australians who play video games. Hover a colour to highlight that age group.</p>
+        </figcaption>
+        <div class="chart" data-spec="specs/au_players_waffle.vl.json"></div>
+        <p class="viz-foot">Source: IGEA, <em>Australia Plays 2025</em> (survey of 1,241 households). · <a href="specs/au_players_waffle.vl.json">Chart spec (JSON)</a></p>
+      </figure>
+    </div>
+
+    <div class="split flip">
+      <figure class="viz bindings-first">
+        <figcaption class="viz-head">
+          <h3>Victoria is the capital of Australian game-making</h3>
+          <p class="how">Choropleth map: each state’s share of Australia’s game-development employees or studios in 2024–25. Switch between the two with the buttons.</p>
+        </figcaption>
+        <div class="chart" data-spec="specs/au_states_map.vl.json"></div>
+        <p class="viz-foot">Source: IGEA, <em>Australian Game Development Survey FY2025</em>; state boundaries from rowanhogan/australian-states. Australian Albers equal-area projection. · <a href="specs/au_states_map.vl.json">Chart spec (JSON)</a></p>
+      </figure>
+      <div class="prose">
+        <p>Victoria has <strong>30%</strong> of the industry’s workers and 27% of its studios. Queensland and New South Wales follow, and together the three east-coast states employ 80% of game developers.</p>
+        <p>The two measures tell different stories. Comparing them (below) shows where the big studios are.</p>
+      </div>
+    </div>
+
+    <div class="split">
+      <div class="prose">
+        <p>When a state’s share of workers is bigger than its share of studios, its studios are bigger than average. <strong>Queensland</strong> has 17% of studios but 27% of workers.</p>
+        <p><strong>Western Australia</strong> is the reverse: 14% of studios but only 8% of workers, a scene made up of small independent teams.</p>
+      </div>
+      <figure class="viz">
+        <figcaption class="viz-head">
+          <h3>Queensland’s studios are big; Western Australia’s are small</h3>
+          <p class="how">Dumbbell chart: the light dot is each state’s share of studios and the dark dot its share of employees. The longer the bar, the bigger the gap.</p>
+        </figcaption>
+        <div class="chart" data-spec="specs/au_dumbbell.vl.json"></div>
+        <p class="viz-foot">Source: IGEA, <em>Australian Game Development Survey FY2025</em>. · <a href="specs/au_dumbbell.vl.json">Chart spec (JSON)</a></p>
+      </figure>
+    </div>
+
+    <div class="split flip">
+      <figure class="viz">
+        <figcaption class="viz-head">
+          <h3>Australian studios tripled in size in less than a decade</h3>
+          <p class="how">Revenue (left) and full-time employees (right) reported by Australian game-development studios, by financial year. No survey was run for 2017–18. Hover for details.</p>
+        </figcaption>
+        <div class="chart" data-spec="specs/au_industry.vl.json"></div>
+        <p class="viz-foot">Source: IGEA, <em>Australian Game Development Survey</em> FY2024 report and FY2025 snapshot. The survey is voluntary, so figures are a baseline. · <a href="specs/au_industry.vl.json">Chart spec (JSON)</a></p>
+      </figure>
+      <div class="prose">
+        <div class="callout aus">
+          <span class="big">$115M → $339M</span>
+          <span class="small">revenue of Australian game studios, 2015–16 to 2023–24</span>
+        </div>
+        <p>Workers grew almost as fast, from 842 to about 2,450, and 95% of the money comes from overseas. Australian games are made for the same global market charted above.</p>
+        <p>The jump to $608.5M in 2024–25 is partly a change of method. IGEA added sales data from the analytics firm Sensor Tower for the first time, so that bar is not directly comparable with earlier years.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= GAME OVER ======================= -->
+<section class="level" id="takeaways">
+  <div class="wrap">
+    <div class="level-head">
+      <span class="level-tag">Game over?</span>
+      <h2>Four things to remember</h2>
+    </div>
+    <ul class="takeaways">
+      <li><strong>Eras are made by consoles</strong>Nintendo, then Sony, then a three-way race with Microsoft. Each new console generation reshaped what sold.</li>
+      <li><strong>Hits define genres</strong>Super Mario Bros., Pokémon, Wii Sports and Call of Duty each pushed one genre to the top of its era.</li>
+      <li><strong>Power moved west</strong>Japan went from making all six of the top publishers to just one, and from buying 40% of games to 12%.</li>
+      <li><strong>Australia is levelling up</strong>Nine in ten households play, and local studios now earn hundreds of millions of dollars, almost all of it from overseas.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="about" id="about">
+  <div class="wrap">
+    <div class="about-sources">
+      <h2>Data &amp; credits</h2>
+      <h3>Data sources</h3>
+      <ul>
+        <li><strong>Video game sales, 1980–2015</strong>: Gregory Smith, <a href="https://www.kaggle.com/datasets/gregorut/videogamesales">“Video Game Sales”</a> (Kaggle, 2016), scraped from <a href="https://www.vgchartz.com/">VGChartz</a>. It lists 16,598 games that sold more than 100,000 copies, with estimated sales for North America, Europe, Japan and the rest of the world. Games from 2016 onwards were removed because that year was incomplete when the data was collected.</li>
+        <li><strong>Australian game development</strong>: Interactive Games &amp; Entertainment Association (IGEA) and Bond University, <a href="https://igea.net/wp-content/uploads/2024/12/AGDS-2024-Report-Final.pdf">Australian Game Development Survey FY2024 report</a> and <a href="https://igea.net/wp-content/uploads/2026/03/AGD-2025-Standalone-Infographic.pdf">FY2025 industry snapshot</a> (<a href="https://igea.net/2026/03/agds-2025/">media release</a>, March 2026).</li>
+        <li><strong>Australian players</strong>: IGEA and Bond University, <em>Australia Plays 2025</em>, <a href="https://igea.net/2025/09/australian-parents-embrace-the-power-of-play/">media release</a>, September 2025.</li>
+        <li><strong>Maps</strong>: world countries from <a href="https://www.naturalearthdata.com/">Natural Earth</a> (via <a href="https://github.com/vega/vega-datasets">vega-datasets</a>); Australian states from <a href="https://github.com/rowanhogan/australian-states">rowanhogan/australian-states</a>; country regions from <a href="https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes">ISO-3166 Countries with Regional Codes</a>. Publisher headquarters from each company’s Wikipedia article.</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,102 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Treemap (Vega): area = copies sold 1980–2015. Each genre is split into its four biggest publishers plus everyone else.",
+  "width": 960,
+  "height": 470,
+  "padding": 2,
+  "autosize": "none",
+  "data": [
+    {
+      "name": "tree",
+      "url": "data/genre_tree.csv",
+      "format": {"type": "csv", "parse": {"sales": "number", "genre_total": "number"}},
+      "transform": [
+        {"type": "stratify", "key": "id", "parentKey": "parent"},
+        {
+          "type": "treemap",
+          "field": "sales",
+          "sort": {"field": "value", "order": "descending"},
+          "round": true,
+          "method": "squarify",
+          "ratio": 1.3,
+          "paddingInner": 2,
+          "paddingOuter": 0,
+          "paddingTop": 20,
+          "size": [{"signal": "width"}, {"signal": "height"}]
+        }
+      ]
+    },
+    {"name": "genres", "source": "tree", "transform": [{"type": "filter", "expr": "datum.depth === 1"}]},
+    {"name": "leaves", "source": "tree", "transform": [{"type": "filter", "expr": "datum.depth === 2"}]}
+  ],
+  "scales": [
+    {
+      "name": "genreColor",
+      "type": "ordinal",
+      "domain": ["Action", "Sports", "Shooter", "Role-Playing", "Platform", "Misc", "Racing", "Fighting", "Simulation", "Puzzle", "Adventure", "Strategy"],
+      "range": ["#E4572E", "#2E86AB", "#545479", "#8E5BD0", "#E9A825", "#9A958C", "#D1495B", "#8C4A2F", "#4E9F6A", "#E07BA8", "#2A9D8F", "#6C8EAD"]
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "from": {"data": "genres"},
+      "encode": {
+        "enter": {
+          "x": {"field": "x0"}, "y": {"field": "y0"}, "x2": {"field": "x1"}, "y2": {"field": "y1"},
+          "fill": {"scale": "genreColor", "field": "genre"},
+          "cornerRadius": {"value": 3}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "genres"},
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "x": {"signal": "datum.x0 + 6"},
+          "y": {"signal": "datum.y0 + 14"},
+          "text": {"signal": "datum.name + '  ' + format(datum.genre_total, ',.0f') + 'M'"},
+          "limit": {"signal": "datum.x1 - datum.x0 - 10"},
+          "fill": {"signal": "indexof(['Platform', 'Misc', 'Puzzle'], datum.genre) >= 0 ? '#2B2433' : '#FFFFFF'"},
+          "font": {"value": "IBM Plex Sans"},
+          "fontSize": {"value": 12.5},
+          "fontWeight": {"value": 700}
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {"data": "leaves"},
+      "encode": {
+        "enter": {
+          "x": {"field": "x0"}, "y": {"field": "y0"}, "x2": {"field": "x1"}, "y2": {"field": "y1"},
+          "fill": {"value": "#FFFFFF"},
+          "fillOpacity": {"signal": "datum.name === 'Other publishers' ? 0.9 : 0.7"},
+          "cornerRadius": {"value": 2},
+          "tooltip": {"signal": "{'Genre': datum.genre, 'Publisher': datum.name, 'Copies sold': format(datum.sales, ',.1f') + ' million', 'Share of genre': format(datum.sales / datum.genre_total, '.0%')}"}
+        },
+        "update": {"stroke": {"value": null}},
+        "hover": {"stroke": {"value": "#2B2433"}, "strokeWidth": {"value": 2}}
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "leaves"},
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "x": {"signal": "datum.x0 + 5"},
+          "y": {"signal": "datum.y0 + 14"},
+          "text": {"signal": "(datum.x1 - datum.x0 > 46 && datum.y1 - datum.y0 > 30) ? [datum.name, format(datum.sales, ',.0f') + 'M'] : ''"},
+          "limit": {"signal": "datum.x1 - datum.x0 - 8"},
+          "fill": {"value": "#2B2433"},
+          "font": {"value": "IBM Plex Sans"},
+          "fontSize": {"value": 11},
+          "lineHeight": {"value": 13}
+        }
+      }
+    }
+  ]
+}

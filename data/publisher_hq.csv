@@ -1,0 +1,15 @@
+city,country,hub,sales,n,publishers,lat,lon,hub_name,label_lat,label_lon,label_align,label
+Kyoto,Japan,JP,1781,1,Nintendo,35.01,135.8,Japan,37.3,134.6,center,Kyoto · Nintendo
+Tokyo area,Japan,JP,1680,8,"Sony Computer Entertainment, Konami Digital Entertainment, Sega, Namco Bandai Games, Square Enix, SquareSoft, Tecmo Koei, Enix Corporation",35.68,139.7,Japan,33.2,139.6,center,Tokyo · 8 publishers
+Los Angeles area,USA,NA,1373,5,"Activision, THQ, Warner Bros. Interactive Entertainment, Disney Interactive Studios, Vivendi Games",34.05,-118.4,North America,32.4,-116,left,Los Angeles
+San Francisco Bay Area,USA,NA,1166,2,"Electronic Arts, LucasArts",37.6,-122.3,North America,39.8,-119,left,SF Bay Area
+New York area,USA,NA,607.3,3,"Take-Two Interactive, Atari, Acclaim Entertainment",40.75,-73.95,North America,44.6,-76,right,New York
+Paris area,France,EU,463.5,1,Ubisoft,48.85,2.4,Europe,48.85,4,left,Paris
+Seattle area,USA,NA,244.4,1,Microsoft Game Studios,47.65,-122.2,North America,47.65,-120,left,Seattle
+Osaka,Japan,JP,197.8,1,Capcom,34.69,135.5,Japan,32.9,134.3,center,Osaka · Capcom
+London,UK,EU,140.6,2,"Eidos Interactive, Virgin Interactive",51.5,-0.13,Europe,51.5,0.9,left,London
+Washington DC area,USA,NA,79.28,1,Bethesda Softworks,39,-77.1,North America,37.6,-78.5,right,Washington DC
+Chicago,USA,NA,69.29,1,Midway Games,41.88,-87.63,North America,41.88,-88.6,right,Chicago
+Milan,Italy,EU,55.37,1,505 Games,45.46,9.19,Europe,45.46,8.2,right,Milan
+Southam (Warwickshire),UK,EU,46.93,1,Codemasters,52.25,-1.39,Europe,53.2,-0.6,left,Southam
+Munich area,Germany,EU,24.62,1,Deep Silver,48.1,11.45,Europe,48.1,10.6,right,Munich

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Streamgraph: copies sold each year, split by the company that made the platform, with console eras shaded behind.",
+  "width": 960,
+  "height": 330,
+  "layer": [
+    {
+      "data": {"url": "data/eras.csv"},
+      "mark": {"type": "rect"},
+      "encoding": {
+        "x": {"field": "start", "type": "quantitative", "scale": {"domain": [1980, 2016], "nice": false}, "title": null},
+        "x2": {"field": "end"},
+        "y": {"value": 0},
+        "y2": {"value": 330},
+        "fill": {
+          "condition": {"test": "toNumber(datum.order) % 2 === 0", "value": "#EFE7DA"},
+          "value": "#FAF6EF"
+        }
+      }
+    },
+    {
+      "data": {"url": "data/eras.csv"},
+      "mark": {"type": "text", "baseline": "top", "dy": 6, "fontSize": 11, "fontWeight": 600, "color": "#6B6475"},
+      "encoding": {
+        "x": {"field": "mid", "type": "quantitative", "scale": {"domain": [1980, 2016], "nice": false}},
+        "y": {"value": 0},
+        "text": {"field": "era"}
+      }
+    },
+    {
+      "data": {"url": "data/maker_year.csv"},
+      "params": [
+        {"name": "pickMaker", "select": {"type": "point", "fields": ["Maker"]}, "bind": "legend"}
+      ],
+      "transform": [{"calculate": "toNumber(datum.Year) + 0.5", "as": "yearMid"}],
+      "mark": {"type": "area", "interpolate": "monotone", "stroke": "#FFFFFF", "strokeWidth": 0.4},
+      "encoding": {
+        "x": {
+          "field": "yearMid",
+          "type": "quantitative",
+          "title": null,
+          "scale": {"domain": [1980, 2016], "nice": false},
+          "axis": {"format": "d", "values": [1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015], "grid": false}
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "sales",
+          "type": "quantitative",
+          "stack": "center",
+          "scale": {"domain": [0, 800], "nice": false},
+          "axis": null
+        },
+        "color": {
+          "field": "Maker",
+          "type": "nominal",
+          "title": "Platform maker (click to highlight)",
+          "scale": {
+            "domain": ["Nintendo", "Sony", "Microsoft", "Sega", "Atari", "PC", "Other"],
+            "range": ["#E4002B", "#1F5FBF", "#2E9A47", "#8A5CD1", "#E8891C", "#5F6B73", "#B8AFA2"]
+          },
+          "legend": {"orient": "top", "direction": "horizontal", "symbolType": "square", "titleOrient": "left", "titleLimit": 320}
+        },
+        "order": {"field": "Maker", "sort": "ascending"},
+        "opacity": {"condition": {"param": "pickMaker", "value": 1}, "value": 0.15},
+        "tooltip": [
+          {"field": "Year", "type": "quantitative", "format": "d"},
+          {"field": "Maker", "type": "nominal", "title": "Platform maker"},
+          {"field": "sales", "type": "quantitative", "title": "Copies sold (millions)", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"x": 1983.5, "py": 140, "label": "1983: the crash"},
+          {"x": 1998.5, "py": 90, "label": "PlayStation takes the lead"},
+          {"x": 2001.2, "py": 300, "label": "Xbox joins"},
+          {"x": 2008.5, "py": 42, "label": "2008 peak: 679 million copies a year"}
+        ]
+      },
+      "mark": {"type": "text", "fontSize": 11.5, "fontWeight": 600, "color": "#2B2433"},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative", "scale": {"domain": [1980, 2016], "nice": false}},
+        "y": {"field": "py", "type": "quantitative", "scale": null},
+        "text": {"field": "label"}
+      }
+    }
+  ]
+}

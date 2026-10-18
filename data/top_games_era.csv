@@ -1,0 +1,61 @@
+EraOrder,EraYears,EraName,Name,sales,genre,publisher,platforms,rank
+1,1980–85,Early consoles,Super Mario Bros.,40.24,Platform,Nintendo,NES,1
+1,1980–85,Early consoles,Duck Hunt,28.31,Shooter,Nintendo,NES,2
+1,1980–85,Early consoles,Pac-Man,9.03,Puzzle,Atari,"2600, NES",3
+1,1980–85,Early consoles,Pitfall!,4.5,Platform,Activision,2600,4
+1,1980–85,Early consoles,Asteroids,4.31,Shooter,Atari,2600,5
+1,1980–85,Early consoles,Excitebike,4.16,Racing,Nintendo,NES,6
+1,1980–85,Early consoles,Golf,4.01,Sports,Nintendo,NES,7
+1,1980–85,Early consoles,Mario Bros.,3.87,Platform,Nintendo,"2600, NES",8
+1,1980–85,Early consoles,Kung Fu,3.5,Action,Nintendo,NES,9
+1,1980–85,Early consoles,Baseball,3.2,Sports,Nintendo,NES,10
+2,1986–94,8 & 16-bit,Tetris,35.84,Puzzle,Nintendo,"GB, NES",1
+2,1986–94,8 & 16-bit,Super Mario World,20.61,Platform,Nintendo,SNES,2
+2,1986–94,8 & 16-bit,Super Mario Land,18.14,Platform,Nintendo,GB,3
+2,1986–94,8 & 16-bit,Super Mario Bros. 3,17.28,Platform,Nintendo,NES,4
+2,1986–94,8 & 16-bit,Super Mario Land 2: 6 Golden Coins,11.18,Adventure,Nintendo,GB,5
+2,1986–94,8 & 16-bit,Super Mario All-Stars,10.55,Platform,Nintendo,SNES,6
+2,1986–94,8 & 16-bit,Dr. Mario,10.19,Puzzle,Nintendo,"GB, NES",7
+2,1986–94,8 & 16-bit,Donkey Kong Country,9.3,Platform,Nintendo,SNES,8
+2,1986–94,8 & 16-bit,Super Mario Kart,8.76,Racing,Nintendo,SNES,9
+2,1986–94,8 & 16-bit,Super Mario Bros. 2,7.46,Platform,Nintendo,NES,10
+3,1995–2000,3D revolution,Pokemon Red/Pokemon Blue,31.37,Role-Playing,Nintendo,GB,1
+3,1995–2000,3D revolution,Pokemon Gold/Pokemon Silver,23.1,Role-Playing,Nintendo,GB,2
+3,1995–2000,3D revolution,Pokémon Yellow: Special Pikachu Edition,14.64,Role-Playing,Nintendo,GB,3
+3,1995–2000,3D revolution,Super Mario 64,11.89,Platform,Nintendo,N64,4
+3,1995–2000,3D revolution,Gran Turismo,10.95,Racing,Sony Computer Entertainment,PS,5
+3,1995–2000,3D revolution,Mario Kart 64,9.87,Racing,Nintendo,N64,6
+3,1995–2000,3D revolution,Final Fantasy VII,9.72,Role-Playing,Sony Computer Entertainment,PS,7
+3,1995–2000,3D revolution,Gran Turismo 2,9.49,Racing,Sony Computer Entertainment,PS,8
+3,1995–2000,3D revolution,Tony Hawk's Pro Skater,8.46,Sports,Activision,"GB, N64, PS",9
+3,1995–2000,3D revolution,GoldenEye 007,8.09,Shooter,Nintendo,N64,10
+4,2001–05,PS2 era,Nintendogs,24.76,Simulation,Nintendo,DS,1
+4,2001–05,PS2 era,Grand Theft Auto: San Andreas,23.74,Action,Take-Two Interactive,"PC, PS2, XB",2
+4,2001–05,PS2 era,Mario Kart DS,23.42,Racing,Nintendo,DS,3
+4,2001–05,PS2 era,Brain Age: Train Your Brain in Minutes a Day,20.22,Misc,Nintendo,DS,4
+4,2001–05,PS2 era,Grand Theft Auto: Vice City,16.19,Action,Take-Two Interactive,"PC, PS2",5
+4,2001–05,PS2 era,Pokemon Ruby/Pokemon Sapphire,15.85,Role-Playing,Nintendo,GBA,6
+4,2001–05,PS2 era,Brain Age 2: More Training in Minutes a Day,15.3,Puzzle,Nintendo,DS,7
+4,2001–05,PS2 era,Gran Turismo 3: A-Spec,14.98,Racing,Sony Computer Entertainment,PS2,8
+4,2001–05,PS2 era,Grand Theft Auto III,13.11,Action,Take-Two Interactive,"PC, PS2",9
+4,2001–05,PS2 era,Animal Crossing: Wild World,12.27,Simulation,Nintendo,DS,10
+5,2006–12,Motion & HD,Wii Sports,82.74,Sports,Nintendo,Wii,1
+5,2006–12,Motion & HD,Mario Kart Wii,35.82,Racing,Nintendo,Wii,2
+5,2006–12,Motion & HD,Wii Sports Resort,33,Sports,Nintendo,Wii,3
+5,2006–12,Motion & HD,Call of Duty: Modern Warfare 3,30.83,Shooter,Activision,"PC, PS3, Wii, X360",4
+5,2006–12,Motion & HD,New Super Mario Bros.,30.01,Platform,Nintendo,DS,5
+5,2006–12,Motion & HD,Call of Duty: Black Ops II,29.72,Shooter,Activision,"PC, PS3, WiiU, X360",6
+5,2006–12,Motion & HD,Call of Duty: Black Ops,29.4,Shooter,Activision,"DS, PS3, Wii, X360",7
+5,2006–12,Motion & HD,Wii Play,29.02,Misc,Nintendo,Wii,8
+5,2006–12,Motion & HD,New Super Mario Bros. Wii,28.62,Platform,Nintendo,Wii,9
+5,2006–12,Motion & HD,Call of Duty: Modern Warfare 2,25.09,Shooter,Activision,"PC, PS3, X360",10
+6,2013–15,Modern,Grand Theft Auto V,55.92,Action,Take-Two Interactive,"PC, PS3, PS4, X360, XOne",1
+6,2013–15,Modern,Call of Duty: Ghosts,27.38,Shooter,Activision,"PC, PS3, PS4, WiiU, X360, XOne",2
+6,2013–15,Modern,Call of Duty: Black Ops 3,25.32,Shooter,Activision,"PC, PS3, PS4, X360, XOne",3
+6,2013–15,Modern,Minecraft,23.3,Misc,Microsoft Game Studios,"PS3, PS4, PSV, X360, XOne",4
+6,2013–15,Modern,Call of Duty: Advanced Warfare,21.9,Shooter,Activision,"PC, PS3, PS4, X360, XOne",5
+6,2013–15,Modern,FIFA 15,19.02,Sports,Electronic Arts,"3DS, PC, PS3, PS4, PSV, Wii, X360, XOne",6
+6,2013–15,Modern,FIFA 14,17.14,Sports,Electronic Arts,"3DS, PC, PS3, PS4, PSP, PSV, Wii, X360, XOne",7
+6,2013–15,Modern,FIFA 16,16.44,Sports,Electronic Arts,"PC, PS3, PS4, X360, XOne",8
+6,2013–15,Modern,Pokemon X/Pokemon Y,14.35,Role-Playing,Nintendo,3DS,9
+6,2013–15,Modern,Battlefield 4,14.03,Shooter,Electronic Arts,"PC, PS3, PS4, X360, XOne",10

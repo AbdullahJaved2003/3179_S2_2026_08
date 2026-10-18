@@ -1,0 +1,151 @@
+origin,dest,step,lat,lon,sales,share,width
+Europe,North America,0,50,10,371.6,0.5086,371.6
+Europe,North America,1,52.53,7.18,371.6,0.5086,360.7
+Europe,North America,2,54.96,4.01,371.6,0.5086,349.9
+Europe,North America,3,57.28,0.41,371.6,0.5086,339
+Europe,North America,4,59.45,-3.69,371.6,0.5086,328.2
+Europe,North America,5,61.43,-8.36,371.6,0.5086,317.4
+Europe,North America,6,63.16,-13.66,371.6,0.5086,306.5
+Europe,North America,7,64.6,-19.63,371.6,0.5086,295.7
+Europe,North America,8,65.7,-26.21,371.6,0.5086,284.9
+Europe,North America,9,66.4,-33.29,371.6,0.5086,274
+Europe,North America,10,66.68,-40.65,371.6,0.5086,263.2
+Europe,North America,11,66.52,-48.03,371.6,0.5086,252.4
+Europe,North America,12,65.92,-55.14,371.6,0.5086,241.5
+Europe,North America,13,64.92,-61.76,371.6,0.5086,230.7
+Europe,North America,14,63.56,-67.74,371.6,0.5086,219.8
+Europe,North America,15,61.9,-73.04,371.6,0.5086,209
+Europe,North America,16,59.97,-77.67,371.6,0.5086,198.2
+Europe,North America,17,57.83,-81.67,371.6,0.5086,187.3
+Europe,North America,18,55.52,-85.13,371.6,0.5086,176.5
+Europe,North America,19,53.06,-88.13,371.6,0.5086,165.7
+Europe,North America,20,50.49,-90.73,371.6,0.5086,154.8
+Europe,North America,21,47.83,-93.02,371.6,0.5086,144
+Europe,North America,22,45.1,-95.04,371.6,0.5086,133.1
+Europe,North America,23,42.32,-96.85,371.6,0.5086,122.3
+Europe,North America,24,39.5,-98.5,371.6,0.5086,111.5
+Europe,Japan,0,50,10,25.8,0.0354,25.8
+Europe,Japan,1,51.98,14.69,25.8,0.0354,25.1
+Europe,Japan,2,53.76,19.77,25.8,0.0354,24.3
+Europe,Japan,3,55.33,25.24,25.8,0.0354,23.6
+Europe,Japan,4,56.67,31.07,25.8,0.0354,22.8
+Europe,Japan,5,57.75,37.24,25.8,0.0354,22.1
+Europe,Japan,6,58.56,43.68,25.8,0.0354,21.3
+Europe,Japan,7,59.11,50.31,25.8,0.0354,20.6
+Europe,Japan,8,59.38,57.05,25.8,0.0354,19.8
+Europe,Japan,9,59.37,63.8,25.8,0.0354,19.1
+Europe,Japan,10,59.11,70.48,25.8,0.0354,18.3
+Europe,Japan,11,58.6,77.02,25.8,0.0354,17.6
+Europe,Japan,12,57.86,83.35,25.8,0.0354,16.8
+Europe,Japan,13,56.9,89.43,25.8,0.0354,16
+Europe,Japan,14,55.74,95.23,25.8,0.0354,15.3
+Europe,Japan,15,54.41,100.7,25.8,0.0354,14.5
+Europe,Japan,16,52.9,106,25.8,0.0354,13.8
+Europe,Japan,17,51.25,110.9,25.8,0.0354,13
+Europe,Japan,18,49.45,115.6,25.8,0.0354,12.3
+Europe,Japan,19,47.52,120,25.8,0.0354,11.5
+Europe,Japan,20,45.47,124.1,25.8,0.0354,10.8
+Europe,Japan,21,43.3,128,25.8,0.0354,10
+Europe,Japan,22,41.03,131.6,25.8,0.0354,9.3
+Europe,Japan,23,38.66,135.1,25.8,0.0354,8.5
+Europe,Japan,24,36.2,138.3,25.8,0.0354,7.8
+Japan,North America,0,36.2,138.3,1494,0.4083,1494
+Japan,North America,1,38.36,142.2,1494,0.4083,1450
+Japan,North America,2,40.38,146.3,1494,0.4083,1407
+Japan,North America,3,42.27,150.6,1494,0.4083,1363
+Japan,North America,4,44.01,155.2,1494,0.4083,1320
+Japan,North America,5,45.59,160,1494,0.4083,1276
+Japan,North America,6,47.01,164.9,1494,0.4083,1232
+Japan,North America,7,48.26,170.1,1494,0.4083,1189
+Japan,North America,8,49.32,175.5,1494,0.4083,1145
+Japan,North America,9,50.2,-179,1494,0.4083,1102
+Japan,North America,10,50.89,-173.4,1494,0.4083,1058
+Japan,North America,11,51.38,-167.6,1494,0.4083,1015
+Japan,North America,12,51.68,-161.8,1494,0.4083,971
+Japan,North America,13,51.77,-155.9,1494,0.4083,927.5
+Japan,North America,14,51.65,-150,1494,0.4083,883.9
+Japan,North America,15,51.33,-144.2,1494,0.4083,840.3
+Japan,North America,16,50.79,-138.4,1494,0.4083,796.8
+Japan,North America,17,50.05,-132.7,1494,0.4083,753.2
+Japan,North America,18,49.11,-127.2,1494,0.4083,709.6
+Japan,North America,19,47.96,-121.9,1494,0.4083,666
+Japan,North America,20,46.62,-116.7,1494,0.4083,622.5
+Japan,North America,21,45.09,-111.8,1494,0.4083,578.9
+Japan,North America,22,43.39,-107.1,1494,0.4083,535.3
+Japan,North America,23,41.52,-102.7,1494,0.4083,491.7
+Japan,North America,24,39.5,-98.5,1494,0.4083,448.2
+Japan,Europe,0,36.2,138.3,875.3,0.2393,875.3
+Japan,Europe,1,39.61,137,875.3,0.2393,849.8
+Japan,Europe,2,42.99,135.6,875.3,0.2393,824.3
+Japan,Europe,3,46.34,134,875.3,0.2393,798.7
+Japan,Europe,4,49.64,132.2,875.3,0.2393,773.2
+Japan,Europe,5,52.88,130,875.3,0.2393,747.7
+Japan,Europe,6,56.02,127.4,875.3,0.2393,722.1
+Japan,Europe,7,59.06,124.2,875.3,0.2393,696.6
+Japan,Europe,8,61.95,120.4,875.3,0.2393,671.1
+Japan,Europe,9,64.64,115.6,875.3,0.2393,645.5
+Japan,Europe,10,67.08,109.7,875.3,0.2393,620
+Japan,Europe,11,69.18,102.5,875.3,0.2393,594.5
+Japan,Europe,12,70.83,93.73,875.3,0.2393,569
+Japan,Europe,13,71.91,83.58,875.3,0.2393,543.4
+Japan,Europe,14,72.31,72.51,875.3,0.2393,517.9
+Japan,Europe,15,71.99,61.37,875.3,0.2393,492.4
+Japan,Europe,16,70.98,51,875.3,0.2393,466.8
+Japan,Europe,17,69.38,41.94,875.3,0.2393,441.3
+Japan,Europe,18,67.32,34.37,875.3,0.2393,415.8
+Japan,Europe,19,64.9,28.15,875.3,0.2393,390.2
+Japan,Europe,20,62.21,23.07,875.3,0.2393,364.7
+Japan,Europe,21,59.33,18.9,875.3,0.2393,339.2
+Japan,Europe,22,56.31,15.43,875.3,0.2393,313.7
+Japan,Europe,23,53.19,12.51,875.3,0.2393,288.1
+Japan,Europe,24,50,10,875.3,0.2393,262.6
+North America,Europe,0,39.5,-98.5,1066,0.3014,1066
+North America,Europe,1,41.12,-95.06,1066,0.3014,1035
+North America,Europe,2,42.64,-91.47,1066,0.3014,1004
+North America,Europe,3,44.06,-87.74,1066,0.3014,972.9
+North America,Europe,4,45.39,-83.87,1066,0.3014,941.8
+North America,Europe,5,46.61,-79.87,1066,0.3014,910.7
+North America,Europe,6,47.74,-75.76,1066,0.3014,879.6
+North America,Europe,7,48.77,-71.53,1066,0.3014,848.5
+North America,Europe,8,49.71,-67.21,1066,0.3014,817.4
+North America,Europe,9,50.56,-62.79,1066,0.3014,786.3
+North America,Europe,10,51.32,-58.28,1066,0.3014,755.2
+North America,Europe,11,52,-53.68,1066,0.3014,724.1
+North America,Europe,12,52.58,-48.99,1066,0.3014,693
+North America,Europe,13,53.08,-44.21,1066,0.3014,662
+North America,Europe,14,53.47,-39.35,1066,0.3014,630.9
+North America,Europe,15,53.76,-34.42,1066,0.3014,599.8
+North America,Europe,16,53.94,-29.41,1066,0.3014,568.7
+North America,Europe,17,53.99,-24.36,1066,0.3014,537.6
+North America,Europe,18,53.9,-19.27,1066,0.3014,506.5
+North America,Europe,19,53.67,-14.18,1066,0.3014,475.4
+North America,Europe,20,53.28,-9.13,1066,0.3014,444.3
+North America,Europe,21,52.72,-4.14,1066,0.3014,413.2
+North America,Europe,22,51.98,0.73,1066,0.3014,382.1
+North America,Europe,23,51.08,5.46,1066,0.3014,351
+North America,Europe,24,50,10,1066,0.3014,319.9
+North America,Japan,0,39.5,-98.5,49.6,0.014,49.6
+North America,Japan,1,42.78,-101,49.6,0.014,48.2
+North America,Japan,2,46,-103.7,49.6,0.014,46.7
+North America,Japan,3,49.12,-106.8,49.6,0.014,45.3
+North America,Japan,4,52.12,-110.4,49.6,0.014,43.8
+North America,Japan,5,54.95,-114.5,49.6,0.014,42.4
+North America,Japan,6,57.57,-119.2,49.6,0.014,40.9
+North America,Japan,7,59.93,-124.7,49.6,0.014,39.5
+North America,Japan,8,61.96,-131.1,49.6,0.014,38
+North America,Japan,9,63.59,-138.3,49.6,0.014,36.6
+North America,Japan,10,64.73,-146.2,49.6,0.014,35.1
+North America,Japan,11,65.32,-154.8,49.6,0.014,33.7
+North America,Japan,12,65.33,-163.5,49.6,0.014,32.2
+North America,Japan,13,64.76,-172,49.6,0.014,30.8
+North America,Japan,14,63.64,180,49.6,0.014,29.4
+North America,Japan,15,62.03,172.8,49.6,0.014,27.9
+North America,Japan,16,60.01,166.5,49.6,0.014,26.5
+North America,Japan,17,57.67,161,49.6,0.014,25
+North America,Japan,18,55.05,156.3,49.6,0.014,23.6
+North America,Japan,19,52.22,152.2,49.6,0.014,22.1
+North America,Japan,20,49.22,148.7,49.6,0.014,20.7
+North America,Japan,21,46.09,145.6,49.6,0.014,19.2
+North America,Japan,22,42.86,142.9,49.6,0.014,17.8
+North America,Japan,23,39.56,140.5,49.6,0.014,16.3
+North America,Japan,24,36.2,138.3,49.6,0.014,14.9

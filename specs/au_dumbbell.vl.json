@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Dumbbell chart: each state's share of Australia's game studios vs its share of game-development employees (IGEA, FY2025). A dot further right for employees means bigger-than-average studios.",
+  "data": {"url": "data/au_states.csv"},
+  "width": 380,
+  "height": {"step": 30},
+  "transform": [
+    {"calculate": "toNumber(datum.studios_2025) / 100", "as": "Studios"},
+    {"calculate": "toNumber(datum.employees_2025) / 100", "as": "Employees"},
+    {"calculate": "datum.Employees > datum.Studios ? 'Bigger studios' : datum.Employees < datum.Studios ? 'Smaller studios' : ''", "as": "note"}
+  ],
+  "encoding": {
+    "y": {"field": "name", "type": "nominal", "title": null, "sort": {"field": "Employees", "order": "descending"}, "axis": {"ticks": false, "domain": false, "labelFontSize": 11.5, "labelLimit": 200}}
+  },
+  "layer": [
+    {
+      "mark": {"type": "rule", "strokeWidth": 3, "color": "#D9D1C3"},
+      "encoding": {
+        "x": {"field": "Studios", "type": "quantitative", "title": "Share of national total (FY2025)", "axis": {"format": ".0%", "values": [0, 0.1, 0.2, 0.3], "gridColor": "#EDE6DA"}, "scale": {"domain": [0, 0.32]}},
+        "x2": {"field": "Employees"}
+      }
+    },
+    {
+      "transform": [{"fold": ["Studios", "Employees"], "as": ["measure", "share"]}],
+      "mark": {"type": "circle", "size": 150, "opacity": 1, "stroke": "#FFFFFF", "strokeWidth": 1.5},
+      "encoding": {
+        "x": {"field": "share", "type": "quantitative"},
+        "color": {
+          "field": "measure",
+          "type": "nominal",
+          "title": null,
+          "scale": {"domain": ["Studios", "Employees"], "range": ["#9CC9B4", "#0E513D"]},
+          "legend": {"orient": "top", "direction": "horizontal", "labelExpr": "datum.label === 'Studios' ? 'Share of studios' : 'Share of employees'"}
+        },
+        "tooltip": [
+          {"field": "name", "title": "State / territory"},
+          {"field": "Studios", "type": "quantitative", "title": "Share of studios", "format": ".0%"},
+          {"field": "Employees", "type": "quantitative", "title": "Share of employees", "format": ".0%"}
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.abbrev === 'QLD' || datum.abbrev === 'WA'"}, {"calculate": "max(datum.Studios, datum.Employees)", "as": "right"}],
+      "mark": {"type": "text", "align": "left", "dx": 10, "fontSize": 10.5, "fontStyle": "italic", "color": "#6B6475"},
+      "encoding": {"x": {"field": "right", "type": "quantitative"}, "text": {"field": "note"}}
+    }
+  ]
+}

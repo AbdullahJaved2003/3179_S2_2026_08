@@ -1,0 +1,647 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Proportional symbol map in three zoomed panels: headquarters of the 30 biggest publishers (90.7% of copies sold), grouped by city. Circle area = copies sold 1980–2015. All panels share one size scale so circles compare across panels.",
+  "resolve": {
+    "scale": {
+      "size": "shared"
+    }
+  },
+  "spacing": 14,
+  "hconcat": [
+    {
+      "title": {
+        "text": "North America",
+        "fontSize": 13,
+        "color": "#1B8A8F"
+      },
+      "width": 390,
+      "height": 260,
+      "projection": {
+        "type": "albers",
+        "scale": 500,
+        "translate": [
+          205,
+          140
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "data/geo/world-110m.json",
+            "format": {
+              "type": "topojson",
+              "feature": "countries"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#ECE5D8",
+            "stroke": "#FFFFFF",
+            "strokeWidth": 0.8,
+            "clip": true
+          }
+        },
+        {
+          "data": {
+            "url": "data/publisher_hq.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.hub === 'NA'"
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "fillOpacity": 0.75,
+            "stroke": "#FFFFFF",
+            "strokeWidth": 1.2,
+            "clip": true
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "sales",
+              "type": "quantitative",
+              "scale": {
+                "type": "sqrt",
+                "domain": [
+                  0,
+                  1800
+                ],
+                "range": [
+                  0,
+                  3600
+                ]
+              },
+              "title": "Copies sold (millions), circle area",
+              "legend": {
+                "values": [
+                  100,
+                  500,
+                  1500
+                ],
+                "orient": "bottom",
+                "direction": "horizontal",
+                "symbolFillColor": "#CFC6B8",
+                "symbolStrokeColor": "#8A8292",
+                "symbolOpacity": 1,
+                "symbolStrokeWidth": 1
+              }
+            },
+            "order": {
+              "field": "sales",
+              "type": "quantitative",
+              "sort": "descending"
+            },
+            "tooltip": [
+              {
+                "field": "city",
+                "title": "Location"
+              },
+              {
+                "field": "publishers",
+                "title": "Publishers"
+              },
+              {
+                "field": "sales",
+                "type": "quantitative",
+                "title": "Copies sold 1980–2015 (millions)",
+                "format": ",.0f"
+              }
+            ],
+            "fill": {
+              "value": "#1B8A8F"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/publisher_hq.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.hub === 'NA' && datum.label_align === 'left'"
+            },
+            {
+              "calculate": "[datum.label, format(datum.sales, ',.0f') + 'M']",
+              "as": "text"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "fontSize": 10.5,
+            "lineHeight": 12.5,
+            "fontWeight": 600,
+            "color": "#2B2433"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "text"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/publisher_hq.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.hub === 'NA' && datum.label_align === 'center'"
+            },
+            {
+              "calculate": "[datum.label, format(datum.sales, ',.0f') + 'M']",
+              "as": "text"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "middle",
+            "fontSize": 10.5,
+            "lineHeight": 12.5,
+            "fontWeight": 600,
+            "color": "#2B2433"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "text"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/publisher_hq.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.hub === 'NA' && datum.label_align === 'right'"
+            },
+            {
+              "calculate": "[datum.label, format(datum.sales, ',.0f') + 'M']",
+              "as": "text"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "middle",
+            "fontSize": 10.5,
+            "lineHeight": 12.5,
+            "fontWeight": 600,
+            "color": "#2B2433"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "text"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "Europe",
+        "fontSize": 13,
+        "color": "#B37C00"
+      },
+      "width": 250,
+      "height": 260,
+      "projection": {
+        "type": "conicConformal",
+        "rotate": [
+          -5,
+          0
+        ],
+        "parallels": [
+          40,
+          60
+        ],
+        "center": [
+          0,
+          49
+        ],
+        "scale": 1350,
+        "translate": [
+          125,
+          130
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "data/geo/world-110m.json",
+            "format": {
+              "type": "topojson",
+              "feature": "countries"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#ECE5D8",
+            "stroke": "#FFFFFF",
+            "strokeWidth": 0.8,
+            "clip": true
+          }
+        },
+        {
+          "data": {
+            "url": "data/publisher_hq.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.hub === 'EU'"
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "fillOpacity": 0.75,
+            "stroke": "#FFFFFF",
+            "strokeWidth": 1.2,
+            "clip": true
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "sales",
+              "type": "quantitative"
+            },
+            "order": {
+              "field": "sales",
+              "type": "quantitative",
+              "sort": "descending"
+            },
+            "tooltip": [
+              {
+                "field": "city",
+                "title": "Location"
+              },
+              {
+                "field": "publishers",
+                "title": "Publishers"
+              },
+              {
+                "field": "sales",
+                "type": "quantitative",
+                "title": "Copies sold 1980–2015 (millions)",
+                "format": ",.0f"
+              }
+            ],
+            "fill": {
+              "value": "#E3A21A"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/publisher_hq.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.hub === 'EU' && datum.label_align === 'left'"
+            },
+            {
+              "calculate": "[datum.label, format(datum.sales, ',.0f') + 'M']",
+              "as": "text"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "fontSize": 10.5,
+            "lineHeight": 12.5,
+            "fontWeight": 600,
+            "color": "#2B2433"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "text"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/publisher_hq.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.hub === 'EU' && datum.label_align === 'center'"
+            },
+            {
+              "calculate": "[datum.label, format(datum.sales, ',.0f') + 'M']",
+              "as": "text"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "middle",
+            "fontSize": 10.5,
+            "lineHeight": 12.5,
+            "fontWeight": 600,
+            "color": "#2B2433"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "text"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/publisher_hq.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.hub === 'EU' && datum.label_align === 'right'"
+            },
+            {
+              "calculate": "[datum.label, format(datum.sales, ',.0f') + 'M']",
+              "as": "text"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "middle",
+            "fontSize": 10.5,
+            "lineHeight": 12.5,
+            "fontWeight": 600,
+            "color": "#2B2433"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "text"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "Japan",
+        "fontSize": 13,
+        "color": "#D64545"
+      },
+      "width": 250,
+      "height": 260,
+      "projection": {
+        "type": "mercator",
+        "center": [
+          137.5,
+          35.6
+        ],
+        "scale": 1500,
+        "translate": [
+          125,
+          130
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "data/geo/world-110m.json",
+            "format": {
+              "type": "topojson",
+              "feature": "countries"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#ECE5D8",
+            "stroke": "#FFFFFF",
+            "strokeWidth": 0.8,
+            "clip": true
+          }
+        },
+        {
+          "data": {
+            "url": "data/publisher_hq.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.hub === 'JP'"
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "fillOpacity": 0.75,
+            "stroke": "#FFFFFF",
+            "strokeWidth": 1.2,
+            "clip": true
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "sales",
+              "type": "quantitative"
+            },
+            "order": {
+              "field": "sales",
+              "type": "quantitative",
+              "sort": "descending"
+            },
+            "tooltip": [
+              {
+                "field": "city",
+                "title": "Location"
+              },
+              {
+                "field": "publishers",
+                "title": "Publishers"
+              },
+              {
+                "field": "sales",
+                "type": "quantitative",
+                "title": "Copies sold 1980–2015 (millions)",
+                "format": ",.0f"
+              }
+            ],
+            "fill": {
+              "value": "#D64545"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/publisher_hq.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.hub === 'JP' && datum.label_align === 'left'"
+            },
+            {
+              "calculate": "[datum.label, format(datum.sales, ',.0f') + 'M']",
+              "as": "text"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "middle",
+            "fontSize": 10.5,
+            "lineHeight": 12.5,
+            "fontWeight": 600,
+            "color": "#2B2433"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "text"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/publisher_hq.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.hub === 'JP' && datum.label_align === 'center'"
+            },
+            {
+              "calculate": "[datum.label, format(datum.sales, ',.0f') + 'M']",
+              "as": "text"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "middle",
+            "fontSize": 10.5,
+            "lineHeight": 12.5,
+            "fontWeight": 600,
+            "color": "#2B2433"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "text"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/publisher_hq.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.hub === 'JP' && datum.label_align === 'right'"
+            },
+            {
+              "calculate": "[datum.label, format(datum.sales, ',.0f') + 'M']",
+              "as": "text"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "middle",
+            "fontSize": 10.5,
+            "lineHeight": 12.5,
+            "fontWeight": 600,
+            "color": "#2B2433"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "label_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "label_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "text"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

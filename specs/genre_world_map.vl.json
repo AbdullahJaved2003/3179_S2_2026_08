@@ -1,0 +1,79 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Choropleth: share of each sales region's copies (1980–2015) that belong to the chosen genre. VGChartz reports four regions, so every country takes its region's value. Equal Earth projection keeps areas true.",
+  "width": 900,
+  "height": 440,
+  "projection": {"type": "equalEarth"},
+  "params": [
+    {
+      "name": "genre",
+      "value": "Role-Playing",
+      "bind": {
+        "input": "select",
+        "options": ["Action", "Sports", "Shooter", "Role-Playing", "Platform", "Racing", "Fighting", "Simulation", "Puzzle", "Adventure", "Strategy", "Misc"],
+        "name": "Genre: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {"sphere": true},
+      "mark": {"type": "geoshape", "fill": "#F3F6F6", "stroke": "#E1E6E6"}
+    },
+    {
+      "data": {"url": "data/geo/world-110m.json", "format": {"type": "topojson", "feature": "countries"}},
+      "transform": [
+        {"filter": "datum.id !== 10"},
+        {"lookup": "id", "from": {"data": {"url": "data/country_region.csv"}, "key": "id", "fields": ["name", "region"]}},
+        {"calculate": "datum.region || 'Rest of world'", "as": "region"},
+        {"lookup": "region", "from": {"data": {"url": "data/region_genre_wide.csv"}, "key": "region", "fields": ["share_Action", "share_Sports", "share_Shooter", "share_Role-Playing", "share_Platform", "share_Racing", "share_Fighting", "share_Simulation", "share_Puzzle", "share_Adventure", "share_Strategy", "share_Misc", "sales_Action", "sales_Sports", "sales_Shooter", "sales_Role-Playing", "sales_Platform", "sales_Racing", "sales_Fighting", "sales_Simulation", "sales_Puzzle", "sales_Adventure", "sales_Strategy", "sales_Misc"]}},
+        {"calculate": "toNumber(datum['share_' + genre])", "as": "share"},
+        {"calculate": "toNumber(datum['sales_' + genre])", "as": "sales"},
+        {"calculate": "genre", "as": "Genre"}
+      ],
+      "mark": {"type": "geoshape", "stroke": "#FFFFFF", "strokeWidth": 0.4},
+      "encoding": {
+        "color": {
+          "field": "share",
+          "type": "quantitative",
+          "title": "Share of the region's sales",
+          "scale": {"zero": true, "range": ["#FBF1E3", "#F7C995", "#EC8B4B", "#C9502A", "#8A2A12"]},
+          "legend": {"format": ".0%", "orient": "bottom-left", "direction": "horizontal", "gradientLength": 200, "titleLimit": 220}
+        },
+        "tooltip": [
+          {"field": "name", "title": "Country"},
+          {"field": "region", "title": "VGChartz sales region"},
+          {"field": "Genre"},
+          {"field": "share", "type": "quantitative", "title": "Genre's share of region's sales", "format": ".1%"},
+          {"field": "sales", "type": "quantitative", "title": "Copies sold in region (millions)", "format": ",.0f"}
+        ]
+      }
+    },
+    {
+      "data": {"url": "data/region_labels.csv"},
+      "transform": [
+        {"lookup": "region", "from": {"data": {"url": "data/region_genre_wide.csv"}, "key": "region", "fields": ["share_Action", "share_Sports", "share_Shooter", "share_Role-Playing", "share_Platform", "share_Racing", "share_Fighting", "share_Simulation", "share_Puzzle", "share_Adventure", "share_Strategy", "share_Misc"]}},
+        {"calculate": "[datum.name, format(toNumber(datum['share_' + genre]), '.0%') + ' ' + genre]", "as": "label"}
+      ],
+      "mark": {"type": "text", "fontSize": 12, "fontWeight": 700, "lineHeight": 15, "stroke": "#FFFFFF", "strokeWidth": 4, "strokeJoin": "round"},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "label"}
+      }
+    },
+    {
+      "data": {"url": "data/region_labels.csv"},
+      "transform": [
+        {"lookup": "region", "from": {"data": {"url": "data/region_genre_wide.csv"}, "key": "region", "fields": ["share_Action", "share_Sports", "share_Shooter", "share_Role-Playing", "share_Platform", "share_Racing", "share_Fighting", "share_Simulation", "share_Puzzle", "share_Adventure", "share_Strategy", "share_Misc"]}},
+        {"calculate": "[datum.name, format(toNumber(datum['share_' + genre]), '.0%') + ' ' + genre]", "as": "label"}
+      ],
+      "mark": {"type": "text", "fontSize": 12, "fontWeight": 700, "lineHeight": 15, "color": "#2B2433"},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "label"}
+      }
+    }
+  ]
+}

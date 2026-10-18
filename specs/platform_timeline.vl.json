@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Timeline (Gantt) of each platform's selling life. Bar = years carrying at least 1% of the platform's game sales; dot = best year; label = lifetime game sales.",
+  "data": {"url": "data/platforms.csv"},
+  "transform": [
+    {"calculate": "toNumber(datum.peak_year) + 0.5", "as": "peakMid"},
+    {"calculate": "datum.type === 'Home' ? 'Home consoles & PC' : 'Handhelds'", "as": "group"},
+    {"calculate": "format(datum.total, ',.0f') + 'M'", "as": "totalLabel"}
+  ],
+  "facet": {
+    "row": {
+      "field": "group",
+      "type": "nominal",
+      "sort": ["Home consoles & PC", "Handhelds"],
+      "title": null,
+      "header": {"labelAngle": 0, "labelAlign": "left", "labelAnchor": "start", "labelFontSize": 13, "labelFontWeight": 700, "labelColor": "#2B2433", "labelOrient": "top", "labelPadding": 6}
+    }
+  },
+  "resolve": {"scale": {"y": "independent"}},
+  "spacing": 18,
+  "spec": {
+    "width": 820,
+    "height": {"step": 19},
+    "encoding": {
+      "y": {
+        "field": "name",
+        "type": "nominal",
+        "sort": {"field": "start", "op": "min", "order": "ascending"},
+        "title": null,
+        "axis": {"labelFontSize": 11.5, "labelLimit": 220, "ticks": false, "domain": false}
+      }
+    },
+    "layer": [
+      {
+        "params": [
+          {"name": "hoverMaker", "select": {"type": "point", "fields": ["maker"], "on": "mouseover", "clear": "mouseout"}}
+        ],
+        "mark": {"type": "bar", "cornerRadius": 3, "height": 12},
+        "encoding": {
+          "x": {
+            "field": "start",
+            "type": "quantitative",
+            "title": null,
+            "scale": {"domain": [1980, 2020], "nice": false, "zero": false},
+            "axis": {"format": "d", "values": [1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015], "gridColor": "#EDE6DA", "orient": "top"}
+          },
+          "x2": {"field": "end"},
+          "color": {
+            "field": "maker",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Nintendo", "Sony", "Microsoft", "Sega", "Atari", "PC", "Other"],
+              "range": ["#E4002B", "#1F5FBF", "#2E9A47", "#8A5CD1", "#E8891C", "#5F6B73", "#B8AFA2"]
+            },
+            "legend": null
+          },
+          "opacity": {"condition": {"param": "hoverMaker", "empty": true, "value": 0.9}, "value": 0.2},
+          "tooltip": [
+            {"field": "name", "title": "Platform"},
+            {"field": "maker", "title": "Made by"},
+            {"field": "start", "title": "Main selling years from", "format": "d"},
+            {"field": "end", "title": "to (start of)", "format": "d"},
+            {"field": "total", "title": "Game copies sold (millions)", "format": ",.1f"},
+            {"field": "games", "title": "Games in data"},
+            {"field": "top_game", "title": "Best-selling game"}
+          ]
+        }
+      },
+      {
+        "mark": {"type": "point", "filled": true, "fill": "#FFFFFF", "stroke": "#2B2433", "strokeWidth": 1.4, "size": 34},
+        "encoding": {
+          "x": {"field": "peakMid", "type": "quantitative"},
+          "tooltip": [
+            {"field": "name", "title": "Platform"},
+            {"field": "peak_year", "title": "Best year", "format": "d"},
+            {"field": "peak_sales", "title": "Copies sold that year (millions)", "format": ",.1f"}
+          ]
+        }
+      },
+      {
+        "mark": {"type": "text", "align": "left", "dx": 6, "fontSize": 11, "color": "#4A4453"},
+        "encoding": {
+          "x": {"field": "end", "type": "quantitative"},
+          "text": {"field": "totalLabel"},
+          "fontWeight": {"condition": {"test": "datum.total > 700", "value": 700}, "value": 400}
+        }
+      }
+    ]
+  }
+}
